@@ -343,6 +343,24 @@ svg {
   overflow: hidden;
 }
 
+.hero-waves::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 210px at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    rgba(43, 39, 95, 0.72),
+    rgba(49, 42, 114, 0.28) 48%,
+    transparent 74%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero[data-pointer="active"] .hero-waves::after {
+  opacity: 1;
+}
+
 .hero-waves span {
   filter: blur(58px);
   opacity: 0.65;
@@ -580,6 +598,37 @@ h1 span {
 .page-header .typed-heading > span {
   background: none;
   color: inherit;
+}
+
+.gradient-heading .heading-lead {
+  color: inherit;
+}
+
+.typed-gradient {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: bottom;
+  clip-path: inset(0 100% 0 0);
+  background: linear-gradient(90deg, #363295, #51479f, #6977ad, #88a7c7, #51479f, #363295);
+  background-size: 300% 100%;
+  background-clip: text;
+  color: transparent;
+  font-weight: 650;
+}
+
+.gradient-heading-visible .typed-gradient {
+  animation:
+    type-gradient 1.25s steps(var(--characters), end) forwards,
+    gradient-flow 8s linear 1.25s infinite;
+}
+
+@keyframes type-gradient {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .hero-copy {
@@ -2011,7 +2060,232 @@ footer .brand span:last-child {
   }
 }
 
+.vertical-story {
+  padding: 130px 0 80px;
+  background: #fff;
+}
+
+.vertical-story-intro {
+  max-width: 980px;
+}
+
+.vertical-story-intro .gradient-heading {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2.6rem, 5.2vw, 5rem);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.vertical-story-intro .heading-lead,
+.vertical-story-intro .typed-gradient {
+  display: block;
+  width: fit-content;
+}
+
+.vertical-story-intro .why-copy {
+  max-width: 700px;
+  padding-top: 38px;
+}
+
+.vertical-story-list {
+  max-width: 880px;
+  padding-top: 70px;
+}
+
+.vertical-story-slot {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+}
+
+.vertical-story-card {
+  width: min(100%, 720px);
+  min-height: 280px;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 16px 44px rgba(36, 38, 86, 0.07);
+  opacity: 0.34;
+  transform: translateY(30px) scale(0.95);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    border-color 0.55s ease,
+    box-shadow 0.55s ease;
+}
+
+.vertical-story-card.active {
+  border-color: #6977ad;
+  box-shadow: 0 24px 58px rgba(54, 50, 149, 0.18);
+  opacity: 1;
+  transform: none;
+}
+
+.vertical-story-card > span,
+.principle-focus-card > span {
+  color: var(--grape);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.vertical-story-card h3,
+.principle-focus-card h3 {
+  margin: 36px 0 0;
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.vertical-story-card p,
+.principle-focus-card p {
+  max-width: 540px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.principle-sequence {
+  position: relative;
+}
+
+.principle-scroll {
+  height: 340vh;
+}
+
+.principle-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.72fr);
+  align-items: center;
+  gap: 80px;
+  padding-block: 100px 58px;
+}
+
+.principle-intro .gradient-heading {
+  margin: 0;
+  font-size: clamp(2.7rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.principle-intro > p {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.principle-focus-card {
+  min-height: 390px;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  box-shadow: 0 24px 70px rgba(12, 14, 58, 0.22);
+  animation: principle-change 0.48s ease both;
+}
+
+@keyframes principle-change {
+  from {
+    opacity: 0.25;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.principle-progress {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.principle-progress span {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.principle-progress span.active {
+  background: #d2dfe1;
+}
+
+.principle-mobile {
+  display: none;
+}
+
+.principle-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin: 28px 0 18px;
+}
+
+.principle-tabs button {
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+
+.principle-tabs button[aria-selected="true"] {
+  background: #fff;
+  color: var(--grape);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media (max-width: 980px) {
+  .vertical-story {
+    padding-block: 90px 50px;
+  }
+
+  .vertical-story-slot {
+    min-height: auto;
+    padding-block: 34px;
+  }
+
+  .vertical-story-card,
+  .vertical-story-card.active {
+    min-height: 240px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .principle-scroll {
+    display: none;
+  }
+
+  .principle-mobile {
+    display: block;
+    padding-block: 90px;
+  }
   .nav-links {
     gap: 18px;
   }
@@ -2160,6 +2434,36 @@ footer .brand span:last-child {
 
   .story-connector span {
     width: 100%;
+  }
+
+  .typed-gradient,
+  .gradient-heading-visible .typed-gradient {
+    clip-path: inset(0 0 0 0);
+    animation: none;
+  }
+
+  .hero-waves::after {
+    display: none;
+  }
+
+  .vertical-story-slot {
+    min-height: auto;
+    padding-block: 28px;
+  }
+
+  .vertical-story-card,
+  .vertical-story-card.active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .principle-scroll {
+    display: none;
+  }
+
+  .principle-mobile {
+    display: block;
+    padding-block: 90px;
   }
 }
 

@@ -1,15 +1,23 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 
-type TypedHeadingProps = {
+type GradientHeadingProps = {
   as?: "h1" | "h2";
-  children: ReactNode;
+  lead: string;
+  emphasis: string;
   className?: string;
 };
 
-export function TypedHeading({ as: Tag = "h2", children, className = "" }: TypedHeadingProps) {
+type HeadingStyle = CSSProperties & { "--characters": number };
+
+export function GradientHeading({
+  as: Tag = "h2",
+  lead,
+  emphasis,
+  className = ""
+}: GradientHeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -27,7 +35,7 @@ export function TypedHeading({ as: Tag = "h2", children, className = "" }: Typed
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.4 }
     );
     observer.observe(heading);
     return () => observer.disconnect();
@@ -36,9 +44,15 @@ export function TypedHeading({ as: Tag = "h2", children, className = "" }: Typed
   return (
     <Tag
       ref={ref}
-      className={`typed-heading ${visible ? "typed-heading-visible" : ""} ${className}`.trim()}
+      className={`gradient-heading ${visible ? "gradient-heading-visible" : ""} ${className}`.trim()}
     >
-      <span>{children}</span>
+      <span className="heading-lead">{lead}</span>{" "}
+      <strong
+        className="typed-gradient"
+        style={{ "--characters": emphasis.length } as HeadingStyle}
+      >
+        {emphasis}
+      </strong>
     </Tag>
   );
 }

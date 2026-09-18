@@ -1,10 +1,56 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { surveyUrl } from "@/data/resources";
-import { TypedHeading } from "@/components/TypedHeading";
+import { GradientHeading } from "@/components/GradientHeading";
 
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (
+      !hero ||
+      !matchMedia("(pointer: fine)").matches ||
+      matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+    let currentX = 50,
+      currentY = 50,
+      targetX = 50,
+      targetY = 50,
+      frame = 0;
+    const animate = () => {
+      currentX += (targetX - currentX) * 0.09;
+      currentY += (targetY - currentY) * 0.09;
+      hero.style.setProperty("--pointer-x", `${currentX}%`);
+      hero.style.setProperty("--pointer-y", `${currentY}%`);
+      frame = requestAnimationFrame(animate);
+    };
+    const move = (event: PointerEvent) => {
+      const bounds = hero.getBoundingClientRect();
+      targetX = ((event.clientX - bounds.left) / bounds.width) * 100;
+      targetY = ((event.clientY - bounds.top) / bounds.height) * 100;
+      hero.dataset.pointer = "active";
+    };
+    const leave = () => {
+      targetX = 50;
+      targetY = 50;
+      hero.dataset.pointer = "idle";
+    };
+    hero.addEventListener("pointermove", move);
+    hero.addEventListener("pointerleave", leave);
+    frame = requestAnimationFrame(animate);
+    return () => {
+      hero.removeEventListener("pointermove", move);
+      hero.removeEventListener("pointerleave", leave);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" ref={heroRef} data-pointer="idle">
       <div className="hero-waves" aria-hidden="true">
         <span />
         <span />
@@ -15,9 +61,11 @@ export function Hero() {
       </div>
       <div className="container hero-grid">
         <div className="hero-content">
-          <TypedHeading as="h1">
-            Making is becoming more distributed. <strong>How do we make quality visible?</strong>
-          </TypedHeading>
+          <GradientHeading
+            as="h1"
+            lead="Making is becoming more distributed."
+            emphasis="How do we make quality visible?"
+          />
           <p className="hero-copy">
             Products can be designed, made, tested, and used by different people in different
             places. OpenDQM brings people together to explore shared approaches to quality across

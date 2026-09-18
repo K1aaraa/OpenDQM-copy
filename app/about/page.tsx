@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
 import { SurveyCta } from "@/components/SurveyCta";
-import { TypedHeading } from "@/components/TypedHeading";
+import { GradientHeading } from "@/components/GradientHeading";
 
 const perspectives = [
   "Makers",
@@ -35,9 +35,10 @@ export default function AboutPage() {
         <div className="container about-intro-grid">
           <Reveal>
             <p className="section-kicker">What is OpenDQM?</p>
-            <TypedHeading>
-              A community-driven effort for <strong>quality across boundaries.</strong>
-            </TypedHeading>
+            <GradientHeading
+              lead="A community-driven effort for"
+              emphasis="quality across boundaries."
+            />
           </Reveal>
           <Reveal className="about-intro-copy">
             <p>
@@ -58,9 +59,7 @@ export default function AboutPage() {
       <section className="section perspectives-section">
         <div className="container">
           <Reveal className="section-heading">
-            <TypedHeading>
-              Who is <strong>involved?</strong>
-            </TypedHeading>
+            <GradientHeading lead="Who is" emphasis="involved?" />
             <p>OpenDQM needs different views of making, checking, standards, tools, and use.</p>
           </Reveal>
           <div className="perspective-grid">
@@ -80,9 +79,7 @@ export default function AboutPage() {
       <section className="section about-ecosystem" id="affiliated-projects">
         <div className="container">
           <Reveal className="section-heading">
-            <TypedHeading>
-              How the ecosystem <strong>connects.</strong>
-            </TypedHeading>
+            <GradientHeading lead="How the ecosystem" emphasis="connects." />
             <p>
               Affiliated projects bring complementary experience to the wider challenge of
               distributed quality management.
