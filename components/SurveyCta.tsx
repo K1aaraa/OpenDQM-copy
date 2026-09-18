@@ -10,12 +10,15 @@ export function SurveyCta({ compact = false }: SurveyCtaProps) {
       <div className="container">
         <Reveal className="survey-cta-inner">
           <div>
-            <p className="section-kicker">Share your perspective</p>
+            <p className="section-kicker">Take the survey</p>
             <GradientHeading lead="What does quality look like" emphasis="from where you stand?" />
-            <p>We are listening. Your experience can help shape what OpenDQM needs to become.</p>
+            <p>
+              We&apos;re listening. Your experience can help OpenDQM understand what works, what is
+              missing, and what distributed quality needs to become.
+            </p>
           </div>
           <a className="button button-light" href={surveyUrl}>
-            Share your perspective <span aria-hidden="true">&#8594;</span>
+            Take the OpenDQM Survey <span aria-hidden="true">&#8594;</span>
           </a>
         </Reveal>
       </div>

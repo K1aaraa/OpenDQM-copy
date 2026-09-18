@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">OpenDQM mark</title>
-  <rect width="64" height="64" rx="15" fill="#67569F"/>
-  <path d="M17 17h30v30H17zM32 17v30M17 32h30" fill="none" stroke="#D6F8FF" stroke-width="4"/>
-  <circle cx="32" cy="32" r="10" fill="none" stroke="#96DBEE" stroke-width="4"/>
-</svg>

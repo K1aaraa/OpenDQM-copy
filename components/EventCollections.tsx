@@ -16,7 +16,6 @@ export function EventCollections() {
     <div className="event-collections">
       <section aria-labelledby="upcoming-events">
         <div className="collection-heading">
-          <span>01</span>
           <h2 id="upcoming-events">Upcoming events</h2>
         </div>
         <div className="event-page-grid">
@@ -32,7 +31,6 @@ export function EventCollections() {
       </section>
       <section aria-labelledby="past-events">
         <div className="collection-heading">
-          <span>02</span>
           <h2 id="past-events">Past events</h2>
         </div>
         <div className="event-page-grid">

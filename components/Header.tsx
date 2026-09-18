@@ -49,13 +49,20 @@ export function Header() {
           <ul className="nav-links">
             {navigation.map((item) => (
               <li
-                className={item.href === "/resources" ? "nav-has-popup" : undefined}
+                className={`${item.href === "/resources" ? "nav-has-popup" : ""} ${item.comingSoon ? "nav-soon" : ""}`.trim()}
                 key={item.href}
               >
-                <Link className={pathname === item.href ? "active" : ""} href={item.href}>
-                  {item.label}
-                  {item.href === "/resources" && <span aria-hidden="true">&#8964;</span>}
-                </Link>
+                {item.comingSoon ? (
+                  <button type="button" disabled aria-disabled="true">
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link className={pathname === item.href ? "active" : ""} href={item.href}>
+                    {item.label}
+                    {item.href === "/resources" && <span aria-hidden="true">&#8964;</span>}
+                  </Link>
+                )}
+                {item.comingSoon && <span role="tooltip">Coming soon</span>}
                 {item.href === "/resources" && (
                   <div className="nav-popup">
                     <a href={resources.participate.href}>
@@ -63,11 +70,11 @@ export function Header() {
                       <strong>OpenDQM Survey</strong>
                       <small>Help shape the ecosystem</small>
                     </a>
-                    <Link href="/resources">
+                    <div className="nav-popup-soon">
                       <span>Resources</span>
                       <strong>Community materials</strong>
-                      <small>Explore available resources</small>
-                    </Link>
+                      <small>Coming soon</small>
+                    </div>
                   </div>
                 )}
               </li>
@@ -109,14 +116,24 @@ export function Header() {
         <div className="mobile-menu-links">
           {navigation.map((item, index) => (
             <div className="mobile-nav-group" key={item.href}>
-              <Link className={pathname === item.href ? "active" : ""} href={item.href}>
-                <span>0{index + 1}</span>
-                {item.label}
-              </Link>
+              {item.comingSoon ? (
+                <div className="mobile-nav-disabled" aria-disabled="true">
+                  <span>0{index + 1}</span>
+                  <div>
+                    {item.label}
+                    <small>Coming soon</small>
+                  </div>
+                </div>
+              ) : (
+                <Link className={pathname === item.href ? "active" : ""} href={item.href}>
+                  <span>0{index + 1}</span>
+                  {item.label}
+                </Link>
+              )}
               {item.href === "/resources" && (
                 <div className="mobile-subnav">
                   <a href={resources.participate.href}>OpenDQM Survey</a>
-                  <Link href="/resources">All resources</Link>
+                  <span className="mobile-subnav-soon">Community materials - Coming soon</span>
                 </div>
               )}
             </div>

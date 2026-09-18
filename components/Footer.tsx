@@ -29,19 +29,19 @@ export function Footer() {
           <div className="footer-column">
             <h3>Explore</h3>
             <Link href="/about">About OpenDQM</Link>
+            <span className="footer-unavailable">Updates</span>
             <Link href="/events">Events</Link>
-            <Link href="/resources">Resources</Link>
+            <span className="footer-unavailable">Resources</span>
           </div>
           <div className="footer-column">
             <h3>Resources</h3>
             <a href={surveyUrl}>Survey</a>
-            <Link href="/resources">All resources</Link>
+            <span className="footer-unavailable">Community materials</span>
           </div>
           <div className="footer-column">
             <h3>Connect</h3>
             <Link href="/contact">Contact us</Link>
-            <a href="https://github.com/OpenDQM">GitHub</a>
-            <a href="https://www.pubinv.org/">Public Invention</a>
+            <a href="https://github.com/PubInv/OpenDQM">GitHub</a>
           </div>
         </div>
         <div className="footer-bottom">

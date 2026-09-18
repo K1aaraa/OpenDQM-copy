@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Updates",
   description: "OpenDQM project and community updates.",
-  robots: { index: false, follow: false }
+  alternates: { canonical: "/updates" }
 };
 
 export default function UpdatesPage() {

@@ -7,17 +7,17 @@ const steps = [
   {
     number: "01",
     title: "Who made it?",
-    copy: "Organizations: participants across a distributed production network."
+    copy: "Understand the people and organizations involved in producing a product."
   },
   {
     number: "02",
     title: "What was checked?",
-    copy: "Shared evidence: quality information that can move between participants."
+    copy: "Make quality evidence easier to understand, share, and verify."
   },
   {
     number: "03",
     title: "Who needs to know?",
-    copy: "Trusted quality: evidence that becomes verifiable and actionable."
+    copy: "Help useful quality information move between the people and organizations that rely on it."
   }
 ];
 
@@ -51,8 +51,8 @@ export function WhySection() {
         <div className="why-copy">
           <p>A product may involve different makers, organizations, tools, and locations.</p>
           <p>
-            But information about how it was made, checked, and improved does not always move as
-            easily.
+            But information about how it was made, checked, verified, and improved does not always
+            move as easily.
           </p>
         </div>
       </div>

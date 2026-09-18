@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
 import { AboutEcosystem } from "@/components/AboutEcosystem";
+import { InstitutionalSupport } from "@/components/InstitutionalSupport";
 import { PageHeader } from "@/components/PageHeader";
+import { PerspectivesSection } from "@/components/PerspectivesSection";
 import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
-import { SurveyCta } from "@/components/SurveyCta";
 import { GradientHeading } from "@/components/GradientHeading";
-
-const perspectives = [
-  "Makers",
-  "Researchers",
-  "Manufacturers",
-  "Quality professionals",
-  "Tool builders",
-  "Standards and certification groups",
-  "Users"
-];
 
 export const metadata: Metadata = {
   title: "About",
@@ -56,25 +47,7 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-      <section className="section perspectives-section">
-        <div className="container">
-          <Reveal className="section-heading">
-            <GradientHeading lead="Who is" emphasis="involved?" />
-            <p>OpenDQM needs different views of making, checking, standards, tools, and use.</p>
-          </Reveal>
-          <div className="perspective-grid">
-            {perspectives.map((item, index) => (
-              <Reveal
-                className={`perspective-item perspective-${index % 2 ? "right" : "left"}`}
-                key={item}
-              >
-                <span>0{index + 1}</span>
-                {item}
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PerspectivesSection />
       <PrinciplesSection />
       <section className="section about-ecosystem" id="affiliated-projects">
         <div className="container">
@@ -88,7 +61,7 @@ export default function AboutPage() {
           <AboutEcosystem />
         </div>
       </section>
-      <SurveyCta compact />
+      <InstitutionalSupport />
     </>
   );
 }

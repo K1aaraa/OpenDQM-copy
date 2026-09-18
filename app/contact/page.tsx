@@ -19,18 +19,12 @@ export default function ContactPage() {
       <section className="section">
         <div className="container contact-panel">
           <article className="info-card">
-            <span className="card-kicker">Participation</span>
-            <h2>Start with the OpenDQM survey.</h2>
+            <span className="card-kicker">Contact</span>
+            <h2>Contact information coming soon.</h2>
             <p>
-              The survey is the current public intake path while the project formalizes contact
-              details, community calls, and workshop logistics.
+              OpenDQM is formalizing contact details, community calls, and workshop logistics. More
+              ways to connect will be shared here as they become available.
             </p>
-            <a
-              className="button button-primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdwxEZT6vPbFw7K9m1mXFwH4mAHAooeS-6rnsAkMlPOzjc5LQ/viewform?usp=publish-editor"
-            >
-              Open survey
-            </a>
           </article>
         </div>
       </section>

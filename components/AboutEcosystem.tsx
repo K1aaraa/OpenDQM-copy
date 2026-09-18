@@ -8,7 +8,7 @@ export function AboutEcosystem() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <div className="about-project-track" aria-label="Affiliated OpenDQM projects">
+    <div className="about-project-track" aria-label="Affiliated organizations and projects">
       {projects.map((project, index) => {
         const isExpanded = expanded === index;
         return (

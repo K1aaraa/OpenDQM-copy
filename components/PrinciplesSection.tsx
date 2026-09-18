@@ -7,15 +7,15 @@ import { principles } from "@/data/principles";
 export function PrinciplesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (
-      !section ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      window.matchMedia("(max-width: 980px)").matches
-    )
+    if (!section || window.matchMedia("(max-width: 980px)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setReducedMotion(true);
       return;
+    }
     let frame = 0;
     const update = () => {
       const bounds = section.getBoundingClientRect();
@@ -38,7 +38,10 @@ export function PrinciplesSection() {
   const principle = principles[active];
 
   return (
-    <section className="section-dark principle-sequence" id="about">
+    <section
+      className={`section-dark principle-sequence ${reducedMotion ? "reduced-motion" : ""}`}
+      id="about"
+    >
       <div className="principle-scroll" ref={sectionRef}>
         <div className="principle-sticky container">
           <div className="principle-intro">
@@ -65,24 +68,15 @@ export function PrinciplesSection() {
           <GradientHeading lead="What guides" emphasis="the work?" />
           <p>Four simple principles help quality information move across boundaries.</p>
         </div>
-        <div className="principle-tabs" role="tablist" aria-label="OpenDQM principles">
+        <div className="principle-mobile-list">
           {principles.map((item, index) => (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={active === index}
-              onClick={() => setActive(index)}
-              key={item.title}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </button>
+            <article className="principle-focus-card" key={item.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
           ))}
         </div>
-        <article className="principle-focus-card" key={`mobile-${principle.title}`}>
-          <span>{String(active + 1).padStart(2, "0")}</span>
-          <h3>{principle.title}</h3>
-          <p>{principle.description}</p>
-        </article>
       </div>
       <ul className="sr-only">
         {principles.map((item) => (

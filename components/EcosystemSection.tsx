@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { projects } from "@/data/projects";
 import { Reveal } from "@/components/Reveal";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -22,8 +21,11 @@ export function EcosystemSection() {
     <section className="section ecosystem-section" id="ecosystem">
       <div className="container">
         <Reveal className="ecosystem-heading">
-          <p className="section-kicker">We are not starting from scratch</p>
-          <GradientHeading lead="Part of a growing ecosystem for" emphasis="distributed quality." />
+          <p className="section-kicker">Part of a broader quality ecosystem</p>
+          <GradientHeading
+            lead="Affiliated organizations"
+            emphasis="connected to distributed quality."
+          />
         </Reveal>
       </div>
       <Reveal className="logo-marquee">
@@ -35,16 +37,23 @@ export function EcosystemSection() {
       <div className="container ecosystem-explainer">
         <div>
           <p className="section-kicker">What we are building</p>
-          <h3>A shared layer for quality information.</h3>
+          <h3>What OpenDQM is building</h3>
           <p>
-            OpenDQM connects and learns from work already happening across distributed
-            manufacturing, open hardware, provenance, and quality. Together, these perspectives can
-            make quality evidence easier to exchange and trust.
+            OpenDQM is scoping a shared foundation for distributed quality: the infrastructure,
+            practices, evidence, governance, and data exchange needed across manufacturing
+            environments.
+          </p>
+          <p>
+            The goal is to help quality information move clearly between different people,
+            organizations, tools, and locations so it can be understood, exchanged, verified, and
+            improved.
+          </p>
+          <p className="ecosystem-formal-definition">
+            OpenDQM is establishing an open, shared, trusted, interoperable ecosystem to support
+            democratized quality control and distributed quality assurance, verification, liability,
+            and continuous improvement across heterogeneous actors.
           </p>
         </div>
-        <Link className="text-link" href="/about#affiliated-projects">
-          How the ecosystem connects <span aria-hidden="true">&#8594;</span>
-        </Link>
       </div>
     </section>
   );

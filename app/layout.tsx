@@ -42,9 +42,6 @@ export const metadata: Metadata = {
     description: "An open, shared, trusted ecosystem for distributed quality management.",
     images: ["/images/opengraph.svg"]
   },
-  icons: {
-    icon: "/icons/opendqm-mark.svg"
-  },
   alternates: {
     canonical: "/"
   }

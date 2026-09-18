@@ -42,7 +42,7 @@ describe("site content", () => {
     const markup = renderToStaticMarkup(
       createElement(EventCard, { event: events[0], compact: true })
     );
-    expect(markup).toContain("Details coming soon");
+    expect(markup).toContain("Private event - invitation required");
     expect(markup).not.toMatch(/<a(?:\s|>)/);
   });
 });
