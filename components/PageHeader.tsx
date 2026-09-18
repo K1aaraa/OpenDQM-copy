@@ -10,7 +10,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
       <div className="container">
         <Reveal className="page-header-content">
           {eyebrow ? <p className="section-kicker">{eyebrow}</p> : null}
-          <h1>{title}</h1>
+          <TypedHeading as="h1">{title}</TypedHeading>
           <p>{description}</p>
         </Reveal>
       </div>
@@ -18,3 +18,4 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   );
 }
 import { Reveal } from "@/components/Reveal";
+import { TypedHeading } from "@/components/TypedHeading";

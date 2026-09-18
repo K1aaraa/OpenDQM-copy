@@ -1,14 +1,15 @@
 import { principles } from "@/data/principles";
 import { Reveal } from "@/components/Reveal";
+import { TypedHeading } from "@/components/TypedHeading";
 
 export function PrinciplesSection() {
   return (
     <section className="section section-dark" id="about">
       <div className="container">
         <Reveal className="section-heading">
-          <h2>
+          <TypedHeading>
             What guides <strong>the work?</strong>
-          </h2>
+          </TypedHeading>
           <p>
             Four simple principles help OpenDQM stay open to participation while making quality
             information more useful across boundaries.

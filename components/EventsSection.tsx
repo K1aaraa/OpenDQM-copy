@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { EventCard } from "@/components/EventCard";
 import { Reveal } from "@/components/Reveal";
+import { TypedHeading } from "@/components/TypedHeading";
 import { events } from "@/data/events";
 import { isPastEvent } from "@/lib/events";
 
@@ -20,9 +21,9 @@ export function EventsSection() {
         <Reveal className="events-heading">
           <div>
             <p className="eyebrow">Events</p>
-            <h2>
+            <TypedHeading>
               Join an upcoming <strong>workshop.</strong>
-            </h2>
+            </TypedHeading>
             <p className="section-intro">
               OpenDQM workshops bring together people working across quality, manufacturing,
               hardware, and assurance.

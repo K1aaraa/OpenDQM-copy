@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Reveal } from "@/components/Reveal";
 
 const steps = [
   {
@@ -33,7 +32,12 @@ export function WhySection() {
       const distance = story.offsetHeight - window.innerHeight;
       const progress = Math.min(1, Math.max(0, -bounds.top / Math.max(distance, 1)));
       story.style.setProperty("--story-progress", String(progress));
-      story.dataset.stage = String(Math.min(2, Math.floor(progress * 3)));
+      story.style.setProperty(
+        "--connector-progress",
+        String(Math.min(1, Math.max(0, (progress - 0.58) / 0.32)))
+      );
+      story.dataset.phase = String(Math.min(8, Math.floor(progress * 9)));
+      story.dataset.stage = String(progress < 0.72 ? 0 : progress < 0.87 ? 1 : 2);
       frame = 0;
     };
     const onScroll = () => {
@@ -54,19 +58,20 @@ export function WhySection() {
       <div className="scroll-story" ref={storyRef} data-stage="0">
         <div className="story-sticky container">
           <div className="why-grid">
-            <Reveal>
+            <div className="story-intro">
               <p className="section-kicker">Why OpenDQM exists</p>
-              <h2>
-                Making can cross boundaries. <strong>Quality needs to cross them too.</strong>
+              <h2 className="story-title">
+                <span>Making can cross boundaries.</span>
+                <strong>Quality needs to cross them too.</strong>
               </h2>
-            </Reveal>
-            <Reveal className="why-copy">
+            </div>
+            <div className="why-copy story-copy">
               <p>A product may involve different makers, organizations, tools, and locations.</p>
               <p>
                 But information about how it was made, checked, and improved does not always move as
                 easily.
               </p>
-            </Reveal>
+            </div>
           </div>
           <div className="quality-story-cards">
             <div className="story-connector" aria-hidden="true">

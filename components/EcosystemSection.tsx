@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { Reveal } from "@/components/Reveal";
+import { TypedHeading } from "@/components/TypedHeading";
 
 function LogoSet({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -22,9 +23,9 @@ export function EcosystemSection() {
       <div className="container">
         <Reveal className="ecosystem-heading">
           <p className="section-kicker">We are not starting from scratch</p>
-          <h2>
+          <TypedHeading>
             Part of a growing ecosystem for <strong>distributed quality.</strong>
-          </h2>
+          </TypedHeading>
         </Reveal>
       </div>
       <Reveal className="logo-marquee">

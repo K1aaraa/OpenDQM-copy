@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { TypedHeading } from "@/components/TypedHeading";
 import { surveyUrl } from "@/data/resources";
 
 type SurveyCtaProps = { compact?: boolean };
@@ -10,9 +11,9 @@ export function SurveyCta({ compact = false }: SurveyCtaProps) {
         <Reveal className="survey-cta-inner">
           <div>
             <p className="section-kicker">Share your perspective</p>
-            <h2>
+            <TypedHeading>
               What does quality look like <strong>from where you stand?</strong>
-            </h2>
+            </TypedHeading>
             <p>We are listening. Your experience can help shape what OpenDQM needs to become.</p>
           </div>
           <a className="button button-light" href={surveyUrl}>

@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
 import { SurveyCta } from "@/components/SurveyCta";
+import { TypedHeading } from "@/components/TypedHeading";
 
 const perspectives = [
   "Makers",
@@ -34,9 +35,9 @@ export default function AboutPage() {
         <div className="container about-intro-grid">
           <Reveal>
             <p className="section-kicker">What is OpenDQM?</p>
-            <h2>
+            <TypedHeading>
               A community-driven effort for <strong>quality across boundaries.</strong>
-            </h2>
+            </TypedHeading>
           </Reveal>
           <Reveal className="about-intro-copy">
             <p>
@@ -57,9 +58,9 @@ export default function AboutPage() {
       <section className="section perspectives-section">
         <div className="container">
           <Reveal className="section-heading">
-            <h2>
+            <TypedHeading>
               Who is <strong>involved?</strong>
-            </h2>
+            </TypedHeading>
             <p>OpenDQM needs different views of making, checking, standards, tools, and use.</p>
           </Reveal>
           <div className="perspective-grid">
@@ -79,9 +80,9 @@ export default function AboutPage() {
       <section className="section about-ecosystem" id="affiliated-projects">
         <div className="container">
           <Reveal className="section-heading">
-            <h2>
+            <TypedHeading>
               How the ecosystem <strong>connects.</strong>
-            </h2>
+            </TypedHeading>
             <p>
               Affiliated projects bring complementary experience to the wider challenge of
               distributed quality management.

@@ -466,6 +466,20 @@ svg {
   font-size: clamp(3rem, 6vw, 5.6rem);
 }
 
+.hero .typed-heading > span {
+  background: none;
+  color: inherit;
+}
+
+.hero h1 strong {
+  background: linear-gradient(90deg, #ffffff, #d2dfe1, #88a7c7, #ffffff);
+  background-size: 260% 100%;
+  background-clip: text;
+  color: transparent;
+  font-weight: 650;
+  animation: gradient-flow 9s linear infinite;
+}
+
 .hero-process {
   position: absolute;
   z-index: 2;
@@ -551,6 +565,21 @@ h1 span {
   background-clip: text;
   color: transparent;
   font-weight: 650;
+}
+
+.typed-heading > span {
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.05s steps(18, end);
+}
+
+.typed-heading-visible > span {
+  clip-path: inset(0 0 0 0);
+}
+
+.page-header .typed-heading > span {
+  background: none;
+  color: inherit;
 }
 
 .hero-copy {
@@ -1088,7 +1117,8 @@ h2 strong {
 
 .scroll-story {
   --story-progress: 0;
-  height: 230vh;
+  --connector-progress: 0;
+  height: 250vh;
 }
 
 .story-sticky {
@@ -1106,6 +1136,72 @@ h2 strong {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 68px;
+}
+
+.story-intro .section-kicker,
+.story-title > span,
+.story-title > strong,
+.story-copy {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.story-title {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  font-size: clamp(2.4rem, 4.7vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.story-title > strong {
+  width: fit-content;
+  background: linear-gradient(90deg, #363295, #51479f, #6977ad, #88a7c7, #51479f, #363295);
+  background-size: 300% 100%;
+  background-clip: text;
+  color: transparent;
+  font-weight: 650;
+  animation: gradient-flow 8s linear infinite;
+}
+
+.scroll-story[data-phase="1"] .story-intro .section-kicker,
+.scroll-story[data-phase="2"] .story-intro .section-kicker,
+.scroll-story[data-phase="3"] .story-intro .section-kicker,
+.scroll-story[data-phase="4"] .story-intro .section-kicker,
+.scroll-story[data-phase="5"] .story-intro .section-kicker,
+.scroll-story[data-phase="6"] .story-intro .section-kicker,
+.scroll-story[data-phase="7"] .story-intro .section-kicker,
+.scroll-story[data-phase="8"] .story-intro .section-kicker,
+.scroll-story[data-phase="2"] .story-title > span,
+.scroll-story[data-phase="3"] .story-title > span,
+.scroll-story[data-phase="4"] .story-title > span,
+.scroll-story[data-phase="5"] .story-title > span,
+.scroll-story[data-phase="6"] .story-title > span,
+.scroll-story[data-phase="7"] .story-title > span,
+.scroll-story[data-phase="8"] .story-title > span,
+.scroll-story[data-phase="3"] .story-title > strong,
+.scroll-story[data-phase="4"] .story-title > strong,
+.scroll-story[data-phase="5"] .story-title > strong,
+.scroll-story[data-phase="6"] .story-title > strong,
+.scroll-story[data-phase="7"] .story-title > strong,
+.scroll-story[data-phase="8"] .story-title > strong,
+.scroll-story[data-phase="4"] .story-copy,
+.scroll-story[data-phase="5"] .story-copy,
+.scroll-story[data-phase="6"] .story-copy,
+.scroll-story[data-phase="7"] .story-copy,
+.scroll-story[data-phase="8"] .story-copy {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes gradient-flow {
+  to {
+    background-position: 300% 0;
+  }
 }
 
 .story-card {
@@ -1147,9 +1243,10 @@ h2 strong {
   font-size: 0.88rem;
 }
 
-.scroll-story[data-stage="0"] .story-card[data-step="0"],
-.scroll-story[data-stage="1"] .story-card[data-step="1"],
-.scroll-story[data-stage="2"] .story-card[data-step="2"] {
+.scroll-story[data-phase="5"] .story-card[data-step="0"],
+.scroll-story[data-phase="6"] .story-card[data-step="0"],
+.scroll-story[data-phase="7"] .story-card[data-step="1"],
+.scroll-story[data-phase="8"] .story-card[data-step="2"] {
   border-color: #7995bc;
   box-shadow: 0 18px 46px rgba(56, 53, 150, 0.18);
   opacity: 1;
@@ -1167,7 +1264,7 @@ h2 strong {
 
 .story-connector span {
   display: block;
-  width: calc(var(--story-progress) * 100%);
+  width: calc(var(--connector-progress) * 100%);
   height: 100%;
   background: var(--gradient-brand);
   transition: width 0.08s linear;
@@ -2026,9 +2123,43 @@ footer .brand span:last-child {
     transform: none;
   }
 
+  .story-intro .section-kicker,
+  .story-title > span,
+  .story-title > strong,
+  .story-copy {
+    opacity: 1;
+    transform: none;
+  }
+
   .survey-cta-inner {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 700px) {
+  .scroll-story {
+    height: auto;
+    padding-block: 90px;
+  }
+
+  .story-sticky {
+    position: relative;
+    min-height: auto;
+    padding-block: 0;
+  }
+
+  .story-intro .section-kicker,
+  .story-title > span,
+  .story-title > strong,
+  .story-copy,
+  .story-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  .story-connector span {
+    width: 100%;
   }
 }
 
@@ -2419,6 +2550,22 @@ footer .brand span:last-child {
   .principles .principle {
     opacity: 1;
     transform: none;
+  }
+
+  .story-intro .section-kicker,
+  .story-title > span,
+  .story-title > strong,
+  .story-copy {
+    opacity: 1;
+    transform: none;
+  }
+
+  .typed-heading > span {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .story-title > strong {
+    animation: none;
   }
 
   .story-connector span {

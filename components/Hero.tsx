@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { surveyUrl } from "@/data/resources";
+import { TypedHeading } from "@/components/TypedHeading";
 
 export function Hero() {
   return (
@@ -14,9 +15,9 @@ export function Hero() {
       </div>
       <div className="container hero-grid">
         <div className="hero-content">
-          <h1>
-            Making is becoming more distributed. <span>How do we make quality visible?</span>
-          </h1>
+          <TypedHeading as="h1">
+            Making is becoming more distributed. <strong>How do we make quality visible?</strong>
+          </TypedHeading>
           <p className="hero-copy">
             Products can be designed, made, tested, and used by different people in different
             places. OpenDQM brings people together to explore shared approaches to quality across
