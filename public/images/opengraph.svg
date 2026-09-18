@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#17151d"/>
+  <circle cx="1010" cy="90" r="230" fill="#D6F8FF" opacity=".45"/>
+  <circle cx="150" cy="500" r="260" fill="#67569F" opacity=".38"/>
+  <g transform="translate(810 185)">
+    <rect width="245" height="245" rx="48" fill="#67569F"/>
+    <path d="M62 62h121v121H62zM122 62v121M62 122h121" fill="none" stroke="#D6F8FF" stroke-width="13"/>
+    <circle cx="122" cy="122" r="42" fill="none" stroke="#96DBEE" stroke-width="13"/>
+  </g>
+  <text x="86" y="240" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="760">OpenDQM</text>
+  <text x="90" y="334" fill="#96DBEE" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">Open Distributed Quality Management</text>
+  <text x="92" y="430" fill="#D6F8FF" font-family="Inter, Arial, sans-serif" font-size="34">Open. Shared. Trusted. Interoperable.</text>
+</svg>
