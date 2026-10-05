@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer id="contact">
       <div className="container">
-        <div className="footer-cta">
+        {/* <div className="footer-cta">
           <h2>
             Help shape the future of <span>distributed quality management.</span>
           </h2>
@@ -20,7 +20,7 @@ export function Footer() {
               Contact us
             </Link>
           </div>
-        </div>
+        </div> */}
         <div className="footer-directory">
           <div className="footer-intro">
             <Logo />
