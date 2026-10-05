@@ -20,6 +20,7 @@ const steps = [
 export function WhySection() {
   return (
     <section className="why-section" id="why">
+      <p className="section-kicker">Why OpenDQM exists</p>
       <div className="container vertical-story-intro">
         <GradientHeading
           lead="OpenDQM is researching the establishment of an"
