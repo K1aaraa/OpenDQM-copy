@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { resources } from "@/data/resources";
+// import { resources } from "@/data/resources";
 import { SurveyCta } from "@/components/SurveyCta";
 
 export const metadata: Metadata = {
