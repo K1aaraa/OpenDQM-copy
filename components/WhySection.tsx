@@ -27,14 +27,12 @@ export function WhySection() {
       <p className="section-kicker"></p>
       <div className="container vertical-story-intro">
         <GradientHeading
-          lead="Our Mission:"
-          emphasis="researching the establishment of an open, shared, trusted, and interoperable ecosystem that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders."
+          lead=""
+          emphasis="Our Mission: "
         />
         <div className="why-copy">
           <p>
-            that supports democratized quality control, distributed quality
-            assurance, verification, liability, and continuous improvement
-            across diverse stakeholders.
+            researching the establishment of an open, shared, trusted, and interoperable ecosystem that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders.
           </p>
         </div>
       </div>
