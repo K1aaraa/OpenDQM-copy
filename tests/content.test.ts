@@ -10,7 +10,7 @@ import { isPastEvent } from "@/lib/events";
 
 describe("site content", () => {
   it("keeps affiliated projects data complete", () => {
-    expect(projects).toHaveLength(4);
+    expect(projects).toHaveLength(6);
     expect(projects.every((project) => project.title && project.image && project.description)).toBe(
       true
     );
