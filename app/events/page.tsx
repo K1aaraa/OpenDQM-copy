@@ -13,9 +13,9 @@ export default function EventsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Events"
-        title="Come explore these questions with us."
-        description="OpenDQM workshops bring together people with different experiences of making, testing, quality, standards, and distributed production."
+        // eyebrow="Events"
+        title="Support OpenDQM Research."
+        description="OpenDQM workshops connect experts in quality assurance, manufacturing, hardware, testing, standards, and distributed production."
       />
       <section className="section">
         <div className="container">

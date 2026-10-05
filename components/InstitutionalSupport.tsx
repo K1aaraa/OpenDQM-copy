@@ -8,8 +8,8 @@ export function InstitutionalSupport() {
         <Reveal className="institutional-support-panel">
           <div className="nsf-wordmark">
             <Image
-              src="/images/NSF_logo.png"
-              alt="National Science Foundation"
+              src="/images/nsf-logo.png"
+              alt=""
               width={260}
               height={260}
             />

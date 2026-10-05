@@ -16,7 +16,7 @@ export function EventCollections() {
     <div className="event-collections">
       <section aria-labelledby="upcoming-events">
         <div className="collection-heading">
-          <h2 id="upcoming-events">Upcoming events</h2>
+          <h2 id="upcoming-events">Upcoming Events</h2>
         </div>
         <div className="event-page-grid">
           {upcoming.map((event) => (

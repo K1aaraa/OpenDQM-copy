@@ -3,7 +3,7 @@ import { AboutEcosystem } from "@/components/AboutEcosystem";
 import { InstitutionalSupport } from "@/components/InstitutionalSupport";
 import { PageHeader } from "@/components/PageHeader";
 import { PerspectivesSection } from "@/components/PerspectivesSection";
-import { PrinciplesSection } from "@/components/PrinciplesSection";
+// import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -25,31 +25,25 @@ export default function AboutPage() {
       <section className="section about-intro">
         <div className="container about-intro-grid">
           <Reveal>
-            <p className="section-kicker">What is OpenDQM?</p>
             <GradientHeading
-              lead="A community-driven effort for"
-              emphasis="quality across boundaries."
+              lead="What is OpenDQM?"
+              emphasis="A community-driven effort that connects people exploring how quality can work across organizations, tools, and locations."
             />
           </Reveal>
           <Reveal className="about-intro-copy">
             <p>
-              OpenDQM brings people together to explore how quality information, evidence, and
-              responsibility can work across organizations, tools, and locations.
-            </p>
-            <p>
-              The goal is to help information move without requiring every participant to use the
-              same system.
-            </p>
-            <p>
-              That can support open participation while preserving accountability, learning, and
-              trust.
+              Investigating ecosystem scale questions:
+
+              How can information move without requiring every participant to use the same system?
+
+              How can open participation be supported while preserving accountability, learning, and trust?
             </p>
           </Reveal>
         </div>
       </section>
-      <PerspectivesSection />
-      <PrinciplesSection />
-      <section className="section about-ecosystem" id="affiliated-projects">
+      {/* <PerspectivesSection /> */}
+      {/* <PrinciplesSection /> */}
+      {/* <section className="section about-ecosystem" id="affiliated-projects">
         <div className="container">
           <Reveal className="section-heading">
             <GradientHeading lead="How the ecosystem" emphasis="connects." />
@@ -60,7 +54,7 @@ export default function AboutPage() {
           </Reveal>
           <AboutEcosystem />
         </div>
-      </section>
+      </section> */}
       <InstitutionalSupport />
     </>
   );
