@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { AboutEcosystem } from "@/components/AboutEcosystem";
+// import { AboutEcosystem } from "@/components/AboutEcosystem";
 import { InstitutionalSupport } from "@/components/InstitutionalSupport";
 import { PageHeader } from "@/components/PageHeader";
-import { PerspectivesSection } from "@/components/PerspectivesSection";
+// import { PerspectivesSection } from "@/components/PerspectivesSection";
 // import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
 import { GradientHeading } from "@/components/GradientHeading";
