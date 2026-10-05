@@ -3265,3 +3265,14 @@ footer .brand span:last-child {
     grid-template-columns: 1fr;
   }
 }
+.footer-funding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.footer-funding span {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

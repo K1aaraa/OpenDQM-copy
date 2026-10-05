@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 // import { surveyUrl } from "@/data/resources";
@@ -21,11 +22,28 @@ export function Footer() {
             </Link>
           </div>
         </div> */}
+
         <div className="footer-directory">
           <div className="footer-intro">
             <Logo />
-            <p>Open, shared infrastructure for trusted distributed quality management.</p>
+
+            <p>
+              Open, shared infrastructure for trusted distributed quality
+              management.
+            </p>
+
+            <div className="footer-funding">
+              <Image
+                src="/images/nsf-logo.png"
+                alt="National Science Foundation logo"
+                width={70}
+                height={70}
+              />
+
+              <span>Funded by the National Science Foundation</span>
+            </div>
           </div>
+
           <div className="footer-column">
             <h3>Explore</h3>
             <Link href="/about">About OpenDQM</Link>
@@ -33,17 +51,20 @@ export function Footer() {
             <Link href="/events">Events</Link>
             <span className="footer-unavailable">Resources</span>
           </div>
+
           {/* <div className="footer-column">
             <h3>Resources</h3>
             <a href={surveyUrl}>Survey</a>
             <span className="footer-unavailable">Community materials</span>
           </div> */}
+
           <div className="footer-column">
             <h3>Connect</h3>
             <Link href="/contact">Contact us</Link>
             <a href="https://github.com/PubInv/OpenDQM">GitHub</a>
           </div>
         </div>
+
         <div className="footer-bottom">
           <span>Copyright {currentYear} OpenDQM</span>
           <span>Open Distributed Quality Management</span>
