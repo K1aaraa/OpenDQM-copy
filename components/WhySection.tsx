@@ -5,7 +5,7 @@ import { GradientHeading } from "@/components/GradientHeading";
 const steps = [
   {
     title: "Open",
-    copy: "Transparent and accessible licensing from day one.",
+    copy: "Built for participation and transparency.",
   },
   {
     title: "Shared",
@@ -17,7 +17,7 @@ const steps = [
   },
   {
     title: "Interoperable",
-    copy: "Standardized practices for data exchange across different platforms and systems.",
+    copy: "Functional approaches across different tools and organizations.",
   },
 ];
 
@@ -27,10 +27,9 @@ export function WhySection() {
       <p className="section-kicker"></p>
       <div className="container vertical-story-intro">
         <GradientHeading
-          lead="OpenDQM is researching the establishment of an"
-          emphasis="open, shared, trusted, and interoperable ecosystem"
+          lead="Our Mission:"
+          emphasis="researching the establishment of an open, shared, trusted, and interoperable ecosystem that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders."
         />
-
         <div className="why-copy">
           <p>
             that supports democratized quality control, distributed quality

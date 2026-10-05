@@ -8,6 +8,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Public Invention",
+    category: "Provenance",
+    description: "Traceable, verifiable records across distributed production networks.",
+    image: "/OpenDQM/images/pubinv.png",
+    alt: "Public Invention project logo"
+  },
+  {
+    title: "OSMS",
+    category: "Provenance",
+    description: "Traceable, verifiable records across distributed production networks.",
+    image: "/OpenDQM/images/osms.jpg",
+    alt: "Open Source Medical Supplies project logo"
+  },
+  {
     title: "Global Distributed Tracking",
     category: "Provenance",
     description: "Traceable, verifiable records across distributed production networks.",
