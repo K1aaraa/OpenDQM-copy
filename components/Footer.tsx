@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { surveyUrl } from "@/data/resources";
+// import { surveyUrl } from "@/data/resources";
 
 const currentYear = new Date().getFullYear();
 
