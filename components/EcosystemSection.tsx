@@ -24,6 +24,7 @@ export function EcosystemSection() {
           {/* <p className="section-kicker">Part of a broader quality ecosystem</p> */}
           <GradientHeading
             lead="The Ecosystem"
+            emphasis = ""
           />
         </Reveal>
       </div>
