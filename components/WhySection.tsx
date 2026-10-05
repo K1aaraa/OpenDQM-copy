@@ -4,6 +4,10 @@ import { GradientHeading } from "@/components/GradientHeading";
 
 const steps = [
   {
+    title: "Open",
+    copy: "Transparent and accessible licensing from day one.",
+  },
+  {
     title: "Shared",
     copy: "A common infrastructure connecting people, systems, and evidence.",
   },
@@ -12,15 +16,15 @@ const steps = [
     copy: "Verified information and accountable quality processes.",
   },
   {
-    title: "The Ecosystem",
-    copy: "OpenDQM is a research project sponsored by the National Science Foundation Pathways for Open Source Ecosystems Phase 1 grant. The Global Open Source Quality Assurance System (GOSQAS), a project of Public Invention and central core of the OpenDQM ecosystem, gratefully partners with other open source community initiatives.",
+    title: "Interoperable",
+    copy: "Standardized practices for data exchange across different platforms and systems.",
   },
 ];
 
 export function WhySection() {
   return (
     <section className="why-section" id="why">
-      <p className="section-kicker">Why OpenDQM exists</p>
+      <p className="section-kicker"></p>
       <div className="container vertical-story-intro">
         <GradientHeading
           lead="OpenDQM is researching the establishment of an"
