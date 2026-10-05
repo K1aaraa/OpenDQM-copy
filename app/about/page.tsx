@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// import { AboutEcosystem } from "@/components/AboutEcosystem";
+import { AboutEcosystem } from "@/components/AboutEcosystem";
 import { InstitutionalSupport } from "@/components/InstitutionalSupport";
 import { PageHeader } from "@/components/PageHeader";
 // import { PerspectivesSection } from "@/components/PerspectivesSection";
@@ -56,6 +56,7 @@ export default function AboutPage() {
           <AboutEcosystem />
         </div>
       </section> */}
+      <AboutEcosystem />
       <InstitutionalSupport />
     </>
   );
