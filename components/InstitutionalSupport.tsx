@@ -8,15 +8,15 @@ export function InstitutionalSupport() {
         <Reveal className="institutional-support-panel">
           <div className="nsf-wordmark">
             <Image
-              src="/images/nsf-logo.png"
+              src="public/images/nsf-logo.png"
               alt=""
               width={260}
               height={260}
             />
           </div>
           <div className="institutional-support-copy">
-            <p className="section-kicker">Institutional context</p>
-            <h2 id="institutional-support-title">Research through the NSF POSE initiative</h2>
+            <p className="section-kicker"></p>
+            <h2 id="institutional-support-title">NSF POSE initiative</h2>
             <p>
               OpenDQM research is being conducted within the framework of the National Science
               Foundation&apos;s Pathways to Enable Open-Source Ecosystems (POSE) program, which
