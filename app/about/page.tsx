@@ -27,13 +27,14 @@ export default function AboutPage() {
           <Reveal>
             <GradientHeading
               lead="What is OpenDQM?"
-              emphasis="A community-driven effort that connects people exploring how quality can work across organizations, tools, and locations."
+              emphasis=" "
             />
           </Reveal>
           <Reveal className="about-intro-copy">
             <p>
-              Investigating ecosystem scale questions:
-
+              A community-driven effort that connects people exploring how quality can work across organizations, tools, and locations/
+            </p>
+            <p>
               How can information move without requiring every participant to use the same system?
 
               How can open participation be supported while preserving accountability, learning, and trust?
