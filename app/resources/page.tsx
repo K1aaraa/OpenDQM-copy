@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { resources } from "@/data/resources";
+import { SurveyCta } from "@/components/SurveyCta";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -12,11 +13,12 @@ export default function ResourcesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Resources"
-        title="Explore the material behind OpenDQM."
-        description="Share your perspective, learn where the project started, and return as new community resources are developed."
+        eyebrow=" "
+        title="Explore OpenDQM."
+        description=""
       />
-      <section className="section resources-page">
+      <SurveyCta />;
+      {/* <section className="section resources-page">
         <div className="container resource-groups">
           <section className="resource-group" aria-labelledby="participate-heading">
             <div className="resource-group-heading">
@@ -60,7 +62,7 @@ export default function ResourcesPage() {
             <p>Future guides and community material will be added as the work develops.</p>
           </section>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
