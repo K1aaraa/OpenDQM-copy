@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { validateInterview, type InterviewRequest, type InterviewSlot } from "@/lib/interview";
+import { validateInterview, type InterviewRequest } from "@/lib/interview";
 
-const emptySlot = (): InterviewSlot => ({ date: "", start: "", end: "" });
 const endpoint = process.env.NEXT_PUBLIC_INTERVIEW_ENDPOINT;
 
 export function InterviewForm() {
   const [timezone, setTimezone] = useState("");
-  const [slots, setSlots] = useState<InterviewSlot[]>([emptySlot(), emptySlot()]);
   const [errors, setErrors] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
   const feedback = useRef<HTMLDivElement>(null);
@@ -29,7 +27,7 @@ export function InterviewForm() {
       professional_background: text("professional_background"),
       linkedin: text("linkedin"),
       email: text("email"),
-      preferred_interview_slots: slots.filter((slot) => slot.date || slot.start || slot.end),
+      preferred_interview_times: text("preferred_interview_times"),
       timezone,
       interest_reason: text("interest_reason"),
       consent: form.get("consent") === "on",
@@ -65,11 +63,6 @@ export function InterviewForm() {
     } finally {
       submitting.current = false;
     }
-  }
-  function updateSlot(index: number, key: keyof InterviewSlot, value: string) {
-    setSlots((current) =>
-      current.map((slot, i) => (i === index ? { ...slot, [key]: value } : slot))
-    );
   }
   return (
     <section
@@ -130,11 +123,26 @@ export function InterviewForm() {
               Professional background
               <textarea name="professional_background" required maxLength={2000} rows={3} />
             </label>
-            <fieldset>
-              <legend>Preferred interview slots — your local time zone</legend>
+            <div className="availability-fields">
               <label>
-                Time zone
+                Preferred interview dates and times
+                <textarea
+                  name="preferred_interview_times"
+                  required
+                  maxLength={2000}
+                  rows={5}
+                  placeholder="I'm usually available Oct. 15-18 after 2 PM, Friday mornings, or Tuesday Oct. 20 between 10 AM and 1 PM."
+                  aria-describedby="availability-help"
+                />
+              </label>
+              <p id="availability-help" className="form-help">
+                Tell us what works for you in your own words. The team will follow up to confirm a
+                time.
+              </p>
+              <label className="timezone-field">
+                Your time zone
                 <input
+                  name="timezone"
                   value={timezone}
                   onChange={(e) => setTimezone(e.target.value)}
                   required
@@ -143,50 +151,10 @@ export function InterviewForm() {
                 />
               </label>
               <p id="timezone-help" className="form-help">
-                Detected from your browser. Verify or change it using a time zone such as
-                America/Chicago or Europe/London. All windows use this time zone.
+                Detected from your browser. You can edit it if needed, for example America/Chicago
+                or Europe/London.
               </p>
-              <p className="form-help">
-                Choose one to three windows. You may leave unused windows blank.
-              </p>
-              {slots.map((slot, i) => (
-                <div className="slot-row" key={i}>
-                  <label>
-                    Window {i + 1}: date
-                    <input
-                      type="date"
-                      value={slot.date}
-                      onChange={(e) => updateSlot(i, "date", e.target.value)}
-                    />
-                  </label>
-                  <label>
-                    Start time
-                    <input
-                      type="time"
-                      value={slot.start}
-                      onChange={(e) => updateSlot(i, "start", e.target.value)}
-                    />
-                  </label>
-                  <label>
-                    End time
-                    <input
-                      type="time"
-                      value={slot.end}
-                      onChange={(e) => updateSlot(i, "end", e.target.value)}
-                    />
-                  </label>
-                </div>
-              ))}
-              {slots.length < 3 && (
-                <button
-                  className="bio-toggle"
-                  type="button"
-                  onClick={() => setSlots((current) => [...current, emptySlot()])}
-                >
-                  Add a third window +
-                </button>
-              )}
-            </fieldset>
+            </div>
             <label>
               Why are you interested in supporting OpenDQM research?
               <textarea name="interest_reason" required maxLength={4000} rows={4} />

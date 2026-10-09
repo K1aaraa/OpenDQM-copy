@@ -8,7 +8,7 @@ const valid = (): InterviewRequest => ({
   professional_background: "Open hardware researcher",
   linkedin: "https://www.linkedin.com/in/example/",
   email: "ada@example.org",
-  preferred_interview_slots: [{ date: "2099-11-10", start: "09:00", end: "10:00" }],
+  preferred_interview_times: "Friday mornings, or Oct. 15-18 after 2 PM",
   timezone: "America/Chicago",
   interest_reason: "I would like to support distributed assurance.",
   consent: true,
@@ -29,23 +29,21 @@ describe("interview validation", () => {
     { interest_reason: "x".repeat(4001) },
     { linkedin: "https://linkedin.com.evil.example/profile" },
     { linkedin: "javascript:alert(1)" },
-    { preferred_interview_slots: [] },
-    { preferred_interview_slots: [{ date: "2099-02-30", start: "09:00", end: "10:00" }] },
-    { preferred_interview_slots: [{ date: "2000-01-01", start: "09:00", end: "10:00" }] },
-    { preferred_interview_slots: [{ date: "2099-01-01", start: "10:00", end: "09:00" }] }
+    { preferred_interview_times: " " },
+    { preferred_interview_times: "x".repeat(2001) },
+    { preferred_interview_times: 123 },
+    { preferred_interview_times: undefined }
   ])("rejects invalid request %j", (patch) => {
     expect(validateInterview({ ...valid(), ...patch }).length).toBeGreaterThan(0);
   });
-  it("uses the visitor's time zone at a date boundary", () => {
-    const request = {
-      ...valid(),
-      preferred_interview_slots: [{ date: "2026-10-08", start: "09:00", end: "10:00" }],
-      timezone: "America/Los_Angeles"
-    };
-    expect(validateInterview(request, new Date("2026-10-09T01:00:00Z"))).toEqual([]);
+  it("preserves natural-language availability without interpreting dates", () => {
     expect(
-      validateInterview({ ...request, timezone: "UTC" }, new Date("2026-10-09T01:00:00Z")).length
-    ).toBeGreaterThan(0);
+      validateInterview({
+        ...valid(),
+        preferred_interview_times: "Tuesday afternoons or next Friday at noon",
+        timezone: "Europe/London"
+      })
+    ).toEqual([]);
   });
   it("neutralizes spreadsheet formulas without rewriting normal prose", () => {
     for (const value of ["=IMPORTXML()", "+123", "-123", "@SUM(A1)", " \n=SUM(A1)"])
@@ -79,6 +77,19 @@ describe("interview write endpoint", () => {
     vi.stubGlobal("fetch", fetchMock);
     expect((await worker.fetch(request({ text: "x".repeat(25000) }), env)).status).toBe(413);
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+  it("permits local and production origins while returning only the requesting origin", async () => {
+    const configured = {
+      ...env,
+      ALLOWED_ORIGINS: "https://pubinv.github.io,http://localhost:3000"
+    };
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({ ok: true })));
+    const response = await worker.fetch(request(valid(), "http://localhost:3000"), configured);
+    expect(response.status).toBe(200);
+    expect(response.headers.get("Access-Control-Allow-Origin")).toBe("http://localhost:3000");
+    const denied = await worker.fetch(request(valid(), "http://localhost:3001"), configured);
+    expect(denied.status).toBe(403);
+    expect(denied.headers.get("Access-Control-Allow-Origin")).toBeNull();
   });
   it("returns success only after an acknowledged append and sends the ordered columns", async () => {
     const fetchMock = vi.fn().mockResolvedValue(Response.json({ ok: true }));

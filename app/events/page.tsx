@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EventCollections } from "@/components/EventCollections";
 import { PageHeader } from "@/components/PageHeader";
-import { SurveyCta } from "@/components/SurveyCta";
+import { InterviewCta } from "@/components/InterviewCta";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -22,7 +22,7 @@ export default function EventsPage() {
           <EventCollections />
         </div>
       </section>
-      <SurveyCta compact />
+      <InterviewCta compact />
     </>
   );
 }

@@ -1,20 +1,33 @@
 import { spreadsheetText, validateInterview, type InterviewRequest } from "../lib/interview";
 
-type Env = { ALLOWED_ORIGIN: string; APPS_SCRIPT_URL: string; APPS_SCRIPT_SECRET: string };
+type Env = {
+  ALLOWED_ORIGIN?: string;
+  ALLOWED_ORIGINS?: string;
+  APPS_SCRIPT_URL: string;
+  APPS_SCRIPT_SECRET: string;
+};
 
 /** Deploy separately from the static website. Secrets exist only in the Worker. */
 const interviewWorker = {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("Origin");
+    const allowedOrigins = (env.ALLOWED_ORIGINS || env.ALLOWED_ORIGIN || "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean);
+    if (!origin || !allowedOrigins.includes(origin))
+      return Response.json(
+        { ok: false },
+        { status: 403, headers: { Vary: "Origin", "Cache-Control": "no-store" } }
+      );
     const headers = {
-      "Access-Control-Allow-Origin": env.ALLOWED_ORIGIN,
+      "Access-Control-Allow-Origin": origin,
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       Vary: "Origin",
       "Cache-Control": "no-store"
     };
     const reply = (body: object, status: number) => Response.json(body, { status, headers });
-    if (origin !== env.ALLOWED_ORIGIN) return reply({ ok: false }, 403);
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     if (request.method !== "POST") return reply({ ok: false }, 405);
     if (!env.APPS_SCRIPT_URL || !env.APPS_SCRIPT_SECRET) return reply({ ok: false }, 503);
@@ -51,7 +64,7 @@ const interviewWorker = {
         data.professional_background.trim(),
         data.linkedin,
         data.email.trim(),
-        JSON.stringify(data.preferred_interview_slots),
+        data.preferred_interview_times.trim(),
         data.timezone,
         data.interest_reason.trim(),
         "opendqm-interview-form"

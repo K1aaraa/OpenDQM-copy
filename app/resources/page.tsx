@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 // import { resources } from "@/data/resources";
-import { SurveyCta } from "@/components/SurveyCta";
+import { InterviewCta } from "@/components/InterviewCta";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -13,7 +13,7 @@ export default function ResourcesPage() {
   return (
     <>
       <PageHeader eyebrow=" " title="Explore OpenDQM." description="" />
-      <SurveyCta />;
+      <InterviewCta />;
       {/* <section className="section resources-page">
         <div className="container resource-groups">
           <section className="resource-group" aria-labelledby="participate-heading">

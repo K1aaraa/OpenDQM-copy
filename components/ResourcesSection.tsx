@@ -1,5 +1,5 @@
-import { SurveyCta } from "@/components/SurveyCta";
+import { InterviewCta } from "@/components/InterviewCta";
 
 export function ResourcesSection() {
-  return <SurveyCta />;
+  return <InterviewCta />;
 }

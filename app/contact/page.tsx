@@ -13,16 +13,28 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Contact"
+        eyebrow="Get involved"
         title="Help shape distributed quality management"
-        description="OpenDQM is developing shared infrastructure and community practices for an open, trusted, interoperable quality ecosystem."
+        description="Whether you'd like to ask a question or participate in the research, we'd like to hear from you."
       />
-      <section className="section">
-        <div className="container contact-panel">
-          <article className="info-card">
+      <section className="section connect-section" aria-label="Ways to get involved">
+        <div className="container connect-options">
+          <article className="connect-option">
+            <p className="section-kicker">Have a question?</p>
             <h2>Contact the OpenDQM team</h2>
             <a className="contact-email" href="mailto:info@opendqm.org">
               info@opendqm.org
+            </a>
+            <a className="button button-secondary" href="mailto:info@opendqm.org">
+              Send an email <span aria-hidden="true">→</span>
+            </a>
+          </article>
+          <article className="connect-option connect-option-research">
+            <p className="section-kicker">Participate in research</p>
+            <h2>Schedule an Interview</h2>
+            <p>Share your experience and help inform the research.</p>
+            <a className="button button-primary" href="#schedule-interview">
+              Start below <span aria-hidden="true">↓</span>
             </a>
           </article>
         </div>
