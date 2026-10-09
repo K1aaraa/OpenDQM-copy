@@ -49,7 +49,7 @@ export function Hero() {
         <div className="hero-content">
           <h1 className="hero-logo">
             <Image
-              src={assetPath("/images/Dark Logo.png")}
+              src={assetPath("/images/Light Logo.png")}
               alt="OpenDQM"
               width={1400}
               height={670}

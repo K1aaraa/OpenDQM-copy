@@ -3329,13 +3329,6 @@ footer .brand img {
 .site-header .brand {
   flex: 0 0 auto;
 }
-.hero {
-  background: linear-gradient(125deg, #f2effc, #dce5f2);
-  color: var(--night);
-}
-.hero::before {
-  background: none;
-}
 .hero-waves {
   opacity: 0.12;
 }
@@ -3350,24 +3343,25 @@ footer .brand img {
   object-fit: contain;
 }
 .hero .hero-copy {
-  color: var(--night);
+  color: #fff;
   max-width: 860px;
 }
 .hero .hero-button-primary {
-  background: var(--night);
-  color: #fff;
-  border-color: var(--night);
+  background: #fff;
+  color: var(--night);
+  border-color: #fff;
 }
 .hero .hero-button-secondary {
-  color: var(--night);
-  border-color: var(--night);
+  color: #fff;
+  border-color: #fff;
   background: transparent;
 }
 .hero .hero-button-primary:hover {
-  background: var(--grape);
+  background: #e5e8f2;
 }
 .hero .hero-button-secondary:hover {
   background: #fff;
+  color: var(--night);
 }
 .ecosystem-section .ecosystem-formal-definition {
   max-width: 960px;
