@@ -1756,11 +1756,9 @@ h2 strong {
 }
 
 .interview-cta {
-  padding: 112px 0;
-  color: #fff;
-  background: linear-gradient(180deg, #5a5ea5 0%, #49369a 42%, #342879 76%, #241f5c 100%);
-  background-size: 220% 220%;
-  animation: survey-gradient 18s ease-in-out infinite alternate;
+  padding: 64px 0;
+  color: var(--night);
+  background: #f7f6fc;
 }
 
 .interview-cta-inner {
@@ -1770,6 +1768,10 @@ h2 strong {
   justify-items: center;
   gap: 30px;
   text-align: left;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid #d9d5eb;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #eeebfa, #edf2fa);
 }
 
 .interview-cta-inner > div {
@@ -1782,7 +1784,7 @@ h2 strong {
 .interview-cta h2 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 500;
   line-height: 1.04;
 }
@@ -1796,7 +1798,7 @@ h2 strong {
 .interview-cta p:last-child {
   max-width: 670px;
   margin-inline: 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
 }
 
 .interview-cta .button {
@@ -2864,7 +2866,7 @@ footer .brand span:last-child {
   .mobile-nav-group > a,
   .mobile-nav-disabled {
     display: grid;
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     min-height: 66px;
     font-size: 1.15rem;
@@ -3247,10 +3249,34 @@ footer .brand span:last-child {
   }
 }
 
+.why-section {
+  padding-block: clamp(56px, 7vw, 96px);
+  background: #f7f6fc;
+}
+.vertical-story-intro {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: clamp(24px, 5vw, 64px);
+  margin-bottom: 40px;
+}
+.vertical-story-intro .gradient-heading {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+.vertical-story-intro .why-copy {
+  padding-top: 0;
+}
+.vertical-story-intro .why-copy p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--muted);
+}
 .horizontal-story-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 18px;
   align-items: stretch;
 }
 
@@ -3289,6 +3315,9 @@ footer .brand span:last-child {
 }
 
 @media (max-width: 600px) {
+  .vertical-story-intro {
+    grid-template-columns: 1fr;
+  }
   .horizontal-story-list {
     grid-template-columns: 1fr;
   }
@@ -3307,7 +3336,7 @@ footer .brand span:last-child {
 
 /* OpenDQM brand assets and participation components */
 .brand img {
-  width: 105px;
+  width: 90px;
   height: auto;
   object-fit: contain;
 }
@@ -3404,6 +3433,18 @@ footer .brand img {
 }
 .event-card .event-status {
   margin-top: auto;
+}
+.event-page-grid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+.event-page-grid > div[id] {
+  display: flex;
+  min-width: 0;
+}
+.event-page-grid .event-card {
+  width: 100%;
+  height: 100%;
 }
 .about-intro-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3760,22 +3801,27 @@ textarea:focus-visible,
   padding-bottom: 64px;
 }
 .connect-section {
-  padding-bottom: 30px;
+  padding-block: 48px 24px;
+  background: #f7f6fc;
 }
 .connect-options {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 0;
+  border: 1px solid #d9d5eb;
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
 }
 .connect-option {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: clamp(24px, 4vw, 40px);
-  background: #faf9ff;
-  border: 1px solid #c8c3e2;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .connect-option .section-kicker {
   margin: 0 0 16px;
@@ -3793,15 +3839,22 @@ textarea:focus-visible,
 }
 .connect-option .contact-email {
   margin: 20px 0 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
 }
 .connect-option .button {
   margin-top: auto;
 }
 .connect-option-research {
-  background: linear-gradient(135deg, #eceafa, #e2e8f4);
+  border-left: 1px solid #d9d5eb;
+  background: #f4f2fb;
 }
 .interview-section {
   padding-top: 32px;
+  background: #f7f6fc;
 }
 .availability-fields {
   padding: 24px;
@@ -3881,6 +3934,8 @@ textarea:focus-visible,
   flex: 1;
 }
 .team-read-hint {
+  opacity: 0;
+  transition: opacity 0.2s ease;
   border: 0;
   padding: 8px 0;
   background: transparent;
@@ -3889,6 +3944,10 @@ textarea:focus-visible,
   cursor: pointer;
   font-size: 0.85rem;
   margin-top: auto;
+}
+.team-front:hover .team-read-hint,
+.team-front:focus-within .team-read-hint {
+  opacity: 1;
 }
 .team-name-link {
   color: var(--night);
@@ -3945,15 +4004,19 @@ textarea:focus-visible,
 }
 @media (max-width: 1024px) {
   .site-header .brand img {
-    width: 95px;
+    width: 82px;
   }
 }
 @media (max-width: 767px) {
   .site-header .brand img {
-    width: 88px;
+    width: 76px;
   }
   .connect-options {
     grid-template-columns: 1fr;
+  }
+  .connect-option-research {
+    border-left: 0;
+    border-top: 1px solid #d9d5eb;
   }
   .footer-directory {
     grid-template-columns: repeat(2, minmax(0, 1fr));

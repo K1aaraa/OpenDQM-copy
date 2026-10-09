@@ -26,17 +26,14 @@ export default function AboutPage() {
         <div className="container about-intro-grid">
           <Reveal className="about-intro-summary">
             <GradientHeading lead="What is OpenDQM?" emphasis=" " />
+          </Reveal>
+          <Reveal className="about-intro-copy">
             <p>
               A community-driven effort that connects people exploring how quality can work across
               organizations, tools, and locations.
             </p>
-          </Reveal>
-          <Reveal className="about-intro-copy">
-            <p className="section-kicker">Questions guiding our research</p>
             <p>
               How can information move without requiring every participant to use the same system?
-            </p>
-            <p>
               How can open participation be supported while preserving accountability, learning, and
               trust?
             </p>

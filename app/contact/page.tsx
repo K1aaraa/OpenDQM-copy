@@ -23,6 +23,18 @@ export default function ContactPage() {
             <p className="section-kicker">Have a question?</p>
             <h2>Contact the OpenDQM team</h2>
             <a className="contact-email" href="mailto:info@opendqm.org">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                aria-hidden="true"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="3" />
+                <path d="m3 6 9 7 9-7" />
+              </svg>
               info@opendqm.org
             </a>
             <a className="button button-secondary" href="mailto:info@opendqm.org">

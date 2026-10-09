@@ -16,7 +16,7 @@ export function InterviewCta({ compact = false }: InterviewCtaProps) {
               for distributed quality management.
             </p>
           </div>
-          <Link className="button button-light" href="/contact#schedule-interview">
+          <Link className="button button-primary" href="/contact#schedule-interview">
             Schedule an Interview <span aria-hidden="true">&#8594;</span>
           </Link>
         </Reveal>
