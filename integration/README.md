@@ -20,4 +20,4 @@ Until the endpoint is configured, the branded form remains visible with an email
 
 ## Handoff verification
 
-Run `npm run lint`, `npm run typecheck`, `npm run format:check`, `npm test`, and a production build with `GITHUB_PAGES=true` and `NEXT_PUBLIC_BASE_PATH=/OpenDQM`. Confirm both Actions jobs in `CI/CD Pipeline` and inspect images, `/contact/#schedule-interview`, routes, accordion keyboard interaction, and responsive layouts on the actual deployment. The working folder provided for this revision has no `.git` directory, so pushing a branch/PR requires an authenticated repository checkout.
+Run `npm run lint`, `npm run typecheck`, `npm run format:check`, `npm test`, and a production build with `GITHUB_PAGES=true` and `NEXT_PUBLIC_BASE_PATH=/OpenDQM-copy` for this repository. CI derives that prefix from the repository name. For the original PubInv/OpenDQM repository, the prefix is `/OpenDQM`. A custom-domain root deployment should instead use an empty prefix. Confirm both Actions jobs in `CI/CD Pipeline` and inspect images, `/contact/#schedule-interview`, routes, accordion keyboard interaction, and responsive layouts on the actual deployment.
