@@ -1957,7 +1957,7 @@ h2 strong {
 }
 
 .nsf-wordmark img {
-  width: min(100%, 190px);
+  width: min(100%, 125px);
   height: auto;
   object-fit: contain;
 }
@@ -3307,7 +3307,7 @@ footer .brand span:last-child {
 
 /* OpenDQM brand assets and participation components */
 .brand img {
-  width: 140px;
+  width: 105px;
   height: auto;
   object-fit: contain;
 }
@@ -3317,13 +3317,13 @@ footer .brand {
   margin-bottom: 20px;
 }
 footer .brand img {
-  width: 185px;
+  width: 135px;
 }
 .footer-directory {
   grid-template-columns: minmax(0, 1.7fr) repeat(2, minmax(0, 1fr));
 }
 .footer-funding img {
-  width: 52px;
+  width: 38px;
   height: auto;
 }
 .site-header .brand {
@@ -3340,7 +3340,7 @@ footer .brand img {
   opacity: 0.12;
 }
 .hero .hero-logo {
-  width: clamp(260px, 38vw, 520px);
+  width: clamp(180px, 25vw, 330px);
   max-width: 100%;
   margin-bottom: 24px;
 }
@@ -3382,12 +3382,13 @@ footer .brand img {
   padding-right: 14px;
 }
 .ecosystem-logo {
-  width: 260px;
-  padding: 24px 12px;
+  width: 200px;
+  min-height: 150px;
+  padding: 18px 12px;
 }
 .ecosystem-logo img {
-  width: 210px;
-  height: 110px;
+  width: 150px;
+  height: 80px;
   object-fit: contain;
 }
 .logo-marquee {
@@ -3899,12 +3900,12 @@ textarea:focus-visible,
 }
 @media (max-width: 1024px) {
   .site-header .brand img {
-    width: 130px;
+    width: 95px;
   }
 }
 @media (max-width: 767px) {
   .site-header .brand img {
-    width: 116px;
+    width: 88px;
   }
   .connect-options {
     grid-template-columns: 1fr;
@@ -3921,7 +3922,7 @@ textarea:focus-visible,
     padding-bottom: 60px;
   }
   .hero .hero-logo {
-    width: min(280px, 100%);
+    width: min(210px, 100%);
   }
 }
 @media (max-width: 600px) {
