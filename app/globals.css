@@ -3406,29 +3406,70 @@ footer .brand img {
   margin-top: auto;
 }
 .about-intro-grid {
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 48px;
-  padding: clamp(24px, 4vw, 52px);
-  border-radius: var(--radius);
-  border: 1px solid #c8c3e2;
-  background: linear-gradient(135deg, #fff, #eeebfa);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(28px, 5vw, 72px);
+}
+.about-intro {
+  padding-block: 56px 32px;
+  background: #f7f6fc;
+}
+.about-intro-summary > p {
+  max-width: 560px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 .about-intro h2 {
   font-size: clamp(1.8rem, 3vw, 3rem);
   color: var(--night);
 }
 .about-intro-copy {
-  padding-top: 0;
+  padding: clamp(24px, 3vw, 36px);
+  border-left: 3px solid #86a6d7;
+  border-radius: 0 18px 18px 0;
+  background: linear-gradient(120deg, #eeebfa, #f0f3fa);
+}
+.about-intro-copy .section-kicker {
+  color: var(--grape);
+  font-size: 0.75rem;
+  margin-bottom: 20px;
 }
 .about-intro-copy p:last-child {
   margin-bottom: 0;
 }
 .institutional-support {
-  padding-bottom: 72px;
+  padding: 0 0 64px;
+  background: #f7f6fc;
+}
+.institutional-support-panel {
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid #d9d5eb;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: none;
+  color: var(--night);
+}
+.institutional-support-copy .section-kicker {
+  color: var(--grape);
+  font-size: 0.75rem;
+}
+.institutional-support-copy h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.institutional-support-copy p:last-child {
+  color: var(--muted);
+  line-height: 1.8;
 }
 .nsf-wordmark {
-  padding: 20px;
-  background: #fff;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 .team-section h2,
 .interview-panel h2 {
@@ -3640,6 +3681,16 @@ textarea:focus-visible,
   }
 }
 @media (max-width: 767px) {
+  .institutional-support-panel {
+    grid-template-columns: 1fr;
+  }
+  .nsf-wordmark {
+    justify-items: start;
+    min-height: 0;
+  }
+  .nsf-wordmark img {
+    width: 90px;
+  }
   .about-intro-grid {
     grid-template-columns: 1fr;
     gap: 24px;
