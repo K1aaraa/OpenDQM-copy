@@ -3795,6 +3795,94 @@ textarea:focus-visible,
   }
 }
 
+/* Continuous section backgrounds keep transitions independent of section height. */
+.home-ombre,
+.about-ombre,
+.events-ombre {
+  background: linear-gradient(180deg, #f7f6fc 0%, #e5e8f2 48%, #d1c9f3 100%);
+}
+.home-ombre > section,
+.about-ombre > section,
+.events-ombre > section {
+  background: transparent;
+}
+.events-ombre .interview-cta-inner {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(73, 54, 154, 0.18);
+}
+.contact-choices {
+  background: linear-gradient(180deg, #f7f6fc, #e5e8f2);
+}
+.contact-choices h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--night);
+}
+.connect-intro {
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.contact-choice {
+  margin-top: 16px;
+  border: 1px solid #c8c3e2;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  overflow: hidden;
+}
+.contact-choice summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 32px);
+  cursor: pointer;
+  list-style: none;
+  color: var(--night);
+}
+.contact-choice summary::-webkit-details-marker {
+  display: none;
+}
+.contact-choice summary strong {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.contact-choice summary > span > span {
+  display: block;
+  color: var(--muted);
+}
+.contact-choice summary:hover,
+.contact-choice summary:focus-visible {
+  background: #eeebfa;
+}
+.choice-plus {
+  font-size: 2rem;
+}
+.contact-choice[open] .choice-plus {
+  transform: rotate(45deg);
+}
+.email-choice-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  padding: 0 clamp(20px, 3vw, 32px) 32px;
+}
+.email-choice-content .contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-choice .interview-section {
+  background: transparent;
+  padding: 0 clamp(16px, 3vw, 32px) 32px;
+}
+.contact-choice .interview-panel {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-shadow: none;
+}
 /* Compact brand lockups, connected participation choices, and team card faces. */
 .hero {
   padding-top: 138px;

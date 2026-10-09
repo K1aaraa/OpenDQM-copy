@@ -9,10 +9,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <WhySection />
-      {/* <PrinciplesSection /> */}
-      <EcosystemSection />
-      <EventsSection />
+      <div className="home-ombre">
+        <WhySection />
+        {/* <PrinciplesSection /> */}
+        <EcosystemSection />
+        <EventsSection />
+      </div>
       {/* <ResourcesSection /> */}
     </>
   );
