@@ -10,9 +10,10 @@ export function SurveyCta({ compact = false }: SurveyCtaProps) {
       <div className="container">
         <Reveal className="survey-cta-inner">
           <div>
-            <GradientHeading lead="What does quality mean to you?" emphasis = "" />
+            <GradientHeading lead="What does quality mean to you?" emphasis="" />
             <p>
-              Your experience can help OpenDQM understand the challenges, solutions, and new ideas for distributed quality management.
+              Your experience can help OpenDQM understand the challenges, solutions, and new ideas
+              for distributed quality management.
             </p>
           </div>
           <a className="button button-light" href={surveyUrl}>

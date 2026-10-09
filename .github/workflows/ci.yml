@@ -1,8 +1,9 @@
-name: CI
+name: CI/CD Pipeline
 
 env:
   GITHUB_PAGES: "true"
-  NEXT_PUBLIC_BASE_PATH: "/OpenDQM"
+  NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
+  NEXT_PUBLIC_INTERVIEW_ENDPOINT: ${{ vars.NEXT_PUBLIC_INTERVIEW_ENDPOINT }}
 
 on:
   push:
@@ -17,7 +18,7 @@ permissions:
 
 jobs:
   validate:
-    name: Lint, Test, and Build
+    name: Test, Build & Upload
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +32,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -39,12 +40,15 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Prettier
+        run: npm run format:check
+
       - name: Test
         run: npm run test
 
       - name: Security audit
         run: npm audit --omit=dev --audit-level=moderate
-        
+
       - name: Build
         run: npm run build
 

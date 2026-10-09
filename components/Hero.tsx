@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { surveyUrl } from "@/data/resources";
+import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -46,15 +47,23 @@ export function Hero() {
       </div>
       <div className="container hero-grid">
         <div className="hero-content">
-          <h1>Distributed Quality Management</h1>
+          <h1 className="hero-logo">
+            <Image
+              src={assetPath("/images/Dark Logo.png")}
+              alt="OpenDQM"
+              width={1400}
+              height={670}
+              priority
+            />
+          </h1>
           <p className="hero-copy">
-            Quality management has not yet adapted to an emerging democratized, distributed reality. 
-            OpenDQM is researching a shared foundation for this new context.
+            OpenDQM is researching a new ecosystem that supports democratized quality control,
+            distributed quality assurance, and trusted verification across diverse stakeholders.
           </p>
           <div className="hero-actions">
-            <a className="button hero-button-primary" href={surveyUrl}>
-              Take the OpenDQM Survey <span aria-hidden="true">&#8594;</span>
-            </a>
+            <Link className="button hero-button-primary" href="/contact#schedule-interview">
+              Schedule an Interview <span aria-hidden="true">&#8594;</span>
+            </Link>
             <Link className="button hero-button-secondary" href="/about">
               About us <span aria-hidden="true">&#8594;</span>
             </Link>

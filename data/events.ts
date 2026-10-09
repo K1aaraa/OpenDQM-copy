@@ -15,10 +15,9 @@ export const events: Event[] = [
     title: "Workshop #1",
     startDate: "2026-11-09",
     endDate: "2026-11-11",
-    location: "Michigan",
+    location: "Detroit, Michigan",
     venue: "",
-    description:
-      "Our first in-person ecosystem scoping workshop is planned to take place in Michigan.",
+    description: "Our first in-person ecosystem scoping workshop is planned for Detroit, Michigan.",
     timeZone: "America/Detroit"
   },
   {
@@ -26,10 +25,9 @@ export const events: Event[] = [
     title: "Workshop #2",
     startDate: "2026-11-12",
     endDate: "2026-11-14",
-    location: "Tucson, AZ",
+    location: "Tucson, Arizona",
     venue: "",
-    description:
-      "Our second in-person ecosystem scoping workshop is planned to take place in Tucson, Arizona.",
+    description: "Our second in-person ecosystem scoping workshop is planned for Tucson, Arizona.",
     timeZone: "America/Phoenix"
   },
   {

@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
   return (
     <>
-      <PageHeader
-        eyebrow=" "
-        title="Explore OpenDQM."
-        description=""
-      />
+      <PageHeader eyebrow=" " title="Explore OpenDQM." description="" />
       <SurveyCta />;
       {/* <section className="section resources-page">
         <div className="container resource-groups">

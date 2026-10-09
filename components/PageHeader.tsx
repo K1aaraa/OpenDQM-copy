@@ -11,7 +11,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
         <Reveal className="page-header-content">
           {eyebrow ? <p className="section-kicker">{eyebrow}</p> : null}
           <h1>{title}</h1>
-          <p>{description}</p>
+          {description && <p>{description}</p>}
         </Reveal>
       </div>
     </section>
