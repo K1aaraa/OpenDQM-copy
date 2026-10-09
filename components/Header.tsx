@@ -106,6 +106,7 @@ export function Header() {
         className={`mobile-menu ${isOpen ? "open" : ""}`}
         id="mobile-menu"
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="mobile-menu-head">
           <span>Explore OpenDQM</span>
