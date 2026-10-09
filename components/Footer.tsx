@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 // import { surveyUrl } from "@/data/resources";
@@ -27,14 +28,11 @@ export function Footer() {
           <div className="footer-intro">
             <Logo />
 
-            <p>
-              Open, shared infrastructure for trusted distributed quality
-              management.
-            </p>
+            <p>Open, shared infrastructure for trusted distributed quality management.</p>
 
             <div className="footer-funding">
               <Image
-                src="/images/nsf-logo.png"
+                src={assetPath("/images/nsf-logo.png")}
                 alt="National Science Foundation logo"
                 width={70}
                 height={70}
@@ -47,7 +45,6 @@ export function Footer() {
           <div className="footer-column">
             <h3>Explore</h3>
             <Link href="/about">About OpenDQM</Link>
-            <span className="footer-unavailable">Updates</span>
             <Link href="/events">Events</Link>
             <span className="footer-unavailable">Resources</span>
           </div>

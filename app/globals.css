@@ -3247,7 +3247,6 @@ footer .brand span:last-child {
   }
 }
 
-
 .horizontal-story-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -3258,9 +3257,38 @@ footer .brand span:last-child {
 .horizontal-story-card {
   min-width: 0;
   height: 100%;
+  padding: 28px 24px;
+  border: 1px solid rgba(209, 201, 243, 0.3);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, var(--night), #342879);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
-@media (max-width: 768px) {
+.horizontal-story-card h3 {
+  margin: 0 0 16px;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+}
+.horizontal-story-card p {
+  margin: 0;
+  color: #eeeafa;
+  font-size: 0.95rem;
+}
+.horizontal-story-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .horizontal-story-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
   .horizontal-story-list {
     grid-template-columns: 1fr;
   }
@@ -3275,4 +3303,394 @@ footer .brand span:last-child {
 .footer-funding span {
   font-size: 0.9rem;
   line-height: 1.4;
+}
+
+/* OpenDQM brand assets and participation components */
+.brand img {
+  width: 112px;
+  height: auto;
+  object-fit: contain;
+}
+footer .brand {
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+}
+.hero {
+  background: linear-gradient(125deg, #f2effc, #dce5f2);
+  color: var(--night);
+}
+.hero::before {
+  background: none;
+}
+.hero-waves {
+  opacity: 0.12;
+}
+.hero .hero-logo {
+  width: min(580px, 100%);
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+.hero-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.hero .hero-copy {
+  color: var(--night);
+  max-width: 860px;
+}
+.hero .hero-button-primary {
+  background: var(--night);
+  color: #fff;
+  border-color: var(--night);
+}
+.hero .hero-button-secondary {
+  color: var(--night);
+  border-color: var(--night);
+  background: transparent;
+}
+.hero .hero-button-primary:hover {
+  background: var(--grape);
+}
+.hero .hero-button-secondary:hover {
+  background: #fff;
+}
+.ecosystem-section .ecosystem-formal-definition {
+  max-width: 960px;
+  margin: 24px auto 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  text-align: center;
+}
+.logo-set {
+  gap: 14px;
+  padding-right: 14px;
+}
+.ecosystem-logo {
+  width: 260px;
+  padding: 24px 12px;
+}
+.ecosystem-logo img {
+  width: 210px;
+  height: 110px;
+  object-fit: contain;
+}
+.logo-marquee {
+  margin-top: 32px;
+}
+.logo-track {
+  animation: ecosystem-scroll 32s linear infinite;
+}
+.logo-set[aria-hidden="true"] {
+  display: flex;
+}
+.event-list-home {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+.event-list-home .event-card {
+  height: 100%;
+  min-width: 0;
+}
+.event-card .event-status {
+  margin-top: auto;
+}
+.about-intro-grid {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 48px;
+  padding: clamp(24px, 4vw, 52px);
+  border-radius: var(--radius);
+  border: 1px solid #c8c3e2;
+  background: linear-gradient(135deg, #fff, #eeebfa);
+}
+.about-intro h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  color: var(--night);
+}
+.about-intro-copy {
+  padding-top: 0;
+}
+.about-intro-copy p:last-child {
+  margin-bottom: 0;
+}
+.institutional-support {
+  padding-bottom: 72px;
+}
+.nsf-wordmark {
+  padding: 20px;
+  background: #fff;
+}
+.team-section h2,
+.interview-panel h2 {
+  margin: 0 0 24px;
+  color: var(--night);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.team-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #faf9ff;
+  border: 1px solid #c8c3e2;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.team-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.team-card-content {
+  padding: 22px;
+}
+.team-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  color: var(--night);
+}
+.team-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-height: 3em;
+  margin: 0 0 16px;
+}
+.team-link {
+  display: block;
+  margin: 0 0 16px;
+  color: var(--grape);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.bio-toggle {
+  padding: 10px 14px;
+  border: 1px solid var(--grape);
+  border-radius: 10px;
+  color: var(--night);
+  background: #eeeafa;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.bio-toggle:hover {
+  background: #ddd5f4;
+}
+.team-bio {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.team-bio p {
+  margin: 22px 0 0;
+}
+.team-bio a,
+.interview-panel a {
+  color: var(--grape);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-email {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--grape);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+#schedule-interview {
+  scroll-margin-top: 120px;
+}
+.interview-panel {
+  max-width: 940px;
+  padding: clamp(24px, 5vw, 56px);
+  background: #faf9ff;
+  border: 1px solid #c8c3e2;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.interview-form {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.interview-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--night);
+  font-size: 0.95rem;
+  min-width: 0;
+}
+.interview-form label > span {
+  color: var(--muted);
+}
+.interview-form input,
+.interview-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #827a9e;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+.interview-form textarea {
+  resize: vertical;
+}
+.interview-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid #c8c3e2;
+  border-radius: var(--radius-sm);
+}
+.interview-form legend {
+  padding: 0 8px;
+  font-weight: 600;
+  color: var(--night);
+}
+.form-help {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.slot-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.interview-form .consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+.interview-form .consent input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  accent-color: var(--grape);
+}
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-errors {
+  color: #842236;
+  background: #fff0f2;
+  padding: 20px 20px 20px 40px;
+  border-radius: 12px;
+}
+.form-success {
+  padding: 24px;
+  background: #eceafa;
+  border-radius: var(--radius-sm);
+}
+.interview-form button[type="submit"] {
+  justify-self: start;
+}
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex="-1"]:focus-visible {
+  outline: 3px solid #49369a;
+  outline-offset: 4px;
+}
+.horizontal-story-card:focus-within {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.horizontal-story-card:focus-visible {
+  outline: 3px solid var(--grape);
+  outline-offset: 5px;
+}
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .slot-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .slot-row label:first-child {
+    grid-column: 1 / -1;
+  }
+  .logo-marquee {
+    overflow: hidden;
+  }
+}
+@media (max-width: 600px) {
+  .team-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-card {
+    max-width: 420px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .team-role {
+    min-height: auto;
+  }
+  .interview-form fieldset {
+    padding: 16px;
+  }
+  .hero-actions {
+    align-items: stretch;
+  }
+  .hero-actions .button {
+    white-space: normal;
+    text-align: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .logo-track {
+    animation: none;
+    width: 100%;
+  }
+  .logo-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+  .logo-set[aria-hidden="true"] {
+    display: none;
+  }
+  .logo-marquee {
+    mask-image: none;
+  }
+  .horizontal-story-card:hover {
+    transform: none;
+  }
 }

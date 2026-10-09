@@ -1,0 +1,8 @@
+{
+  "name": "opendqm-interview",
+  "main": "interview-worker.ts",
+  "compatibility_date": "2026-10-09",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://k1aaraa.github.io"
+  }
+}
