@@ -23,7 +23,8 @@ export function EventsSection() {
             <p className="eyebrow">Events</p>
             <GradientHeading lead="Join an upcoming" emphasis="workshop." />
             <p className="section-intro">
-              OpenDQM workshops connect experts in quality assurance, manufacturing, hardware, testing, standards, and distributed production.
+              OpenDQM workshops connect experts in quality assurance, manufacturing, hardware,
+              testing, standards, and distributed production.
             </p>
           </div>
         </Reveal>

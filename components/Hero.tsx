@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { surveyUrl } from "@/data/resources";
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -48,13 +47,13 @@ export function Hero() {
         <div className="hero-content">
           <h1>Distributed Quality Management</h1>
           <p className="hero-copy">
-            Quality management has not yet adapted to an emerging democratized, distributed reality. 
+            Quality management has not yet adapted to an emerging democratized, distributed reality.
             OpenDQM is researching a shared foundation for this new context.
           </p>
           <div className="hero-actions">
-            <a className="button hero-button-primary" href={surveyUrl}>
-              Take the OpenDQM Survey <span aria-hidden="true">&#8594;</span>
-            </a>
+            <Link className="button hero-button-primary" href="/contact#schedule-interview">
+              Schedule an Interview <span aria-hidden="true">&#8594;</span>
+            </Link>
             <Link className="button hero-button-secondary" href="/about">
               About us <span aria-hidden="true">&#8594;</span>
             </Link>

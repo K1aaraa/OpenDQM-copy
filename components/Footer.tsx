@@ -27,10 +27,7 @@ export function Footer() {
           <div className="footer-intro">
             <Logo />
 
-            <p>
-              Open, shared infrastructure for trusted distributed quality
-              management.
-            </p>
+            <p>Open, shared infrastructure for trusted distributed quality management.</p>
 
             <div className="footer-funding">
               <Image

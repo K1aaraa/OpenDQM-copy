@@ -5,20 +5,20 @@ import { GradientHeading } from "@/components/GradientHeading";
 const steps = [
   {
     title: "Open",
-    copy: "Built for participation and transparency.",
+    copy: "Built for participation and transparency."
   },
   {
     title: "Shared",
-    copy: "A common infrastructure connecting people, systems, and evidence.",
+    copy: "A common infrastructure connecting people, systems, and evidence."
   },
   {
     title: "Trusted",
-    copy: "Verified information and accountable quality processes.",
+    copy: "Verified information and accountable quality processes."
   },
   {
     title: "Interoperable",
-    copy: "Functional approaches across different tools and organizations.",
-  },
+    copy: "Functional approaches across different tools and organizations."
+  }
 ];
 
 export function WhySection() {
@@ -26,13 +26,14 @@ export function WhySection() {
     <section className="why-section" id="why">
       <p className="section-kicker"></p>
       <div className="container vertical-story-intro">
-        <GradientHeading
-          lead=""
-          emphasis="Our Mission: "
-        />
+        <GradientHeading lead="" emphasis="Our Mission: " />
         <div className="why-copy">
           <p>
-            researching the establishment of an open, shared, trusted, and interoperable ecosystem that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders that supports democratized quality control, distributed quality assurance, verification, liability, and continuous improvement across diverse stakeholders.
+            researching the establishment of an open, shared, trusted, and interoperable ecosystem
+            that supports democratized quality control, distributed quality assurance, verification,
+            liability, and continuous improvement across diverse stakeholders that supports
+            democratized quality control, distributed quality assurance, verification, liability,
+            and continuous improvement across diverse stakeholders.
           </p>
         </div>
       </div>

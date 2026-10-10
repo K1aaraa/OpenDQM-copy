@@ -3247,7 +3247,6 @@ footer .brand span:last-child {
   }
 }
 
-
 .horizontal-story-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

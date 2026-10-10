@@ -7,12 +7,7 @@ export function InstitutionalSupport() {
       <div className="container">
         <Reveal className="institutional-support-panel">
           <div className="nsf-wordmark">
-            <Image
-              src="public/images/nsf-logo.png"
-              alt=""
-              width={260}
-              height={260}
-            />
+            <Image src="public/images/nsf-logo.png" alt="" width={260} height={260} />
           </div>
           <div className="institutional-support-copy">
             <p className="section-kicker"></p>

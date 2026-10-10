@@ -7,8 +7,15 @@ import { projects } from "@/data/projects";
 import { resources } from "@/data/resources";
 import { formatDateRange } from "@/lib/formatDate";
 import { isPastEvent } from "@/lib/events";
+import { Hero } from "@/components/Hero";
+import { InterviewCta } from "@/components/InterviewCta";
 
 describe("site content", () => {
+  it.each([Hero, InterviewCta])("routes interview CTAs to the Contact form", (Component) => {
+    const markup = renderToStaticMarkup(createElement(Component));
+    expect(markup).toContain('href="/contact#schedule-interview"');
+    expect(markup).not.toContain("docs.google.com/forms");
+  });
   it("keeps affiliated projects data complete", () => {
     expect(projects).toHaveLength(6);
     expect(projects.every((project) => project.title && project.image && project.description)).toBe(
