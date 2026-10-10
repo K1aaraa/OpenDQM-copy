@@ -49,11 +49,7 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
               src={assetPath(person.image)}
               width={600}
               height={600}
-              alt={
-                person.id === "victoria-jaqua"
-                  ? "Branded initials placeholder for Victoria F. Jaqua"
-                  : person.name
-              }
+              alt={person.name}
             />
             <span className="team-photo-hint" aria-hidden="true">
               Read bio ↻

@@ -25,7 +25,7 @@ export const team = [
     id: "victoria-jaqua",
     name: "Victoria F. Jaqua",
     role: "Co-Principal Investigator",
-    image: "/images/team/victoria-jaqua-placeholder.svg",
+    image: "/images/team/victoria-jaqua.jpg",
     linkedin:
       "https://www.linkedin.com/in/victoria-jaqua-rt-r-ct-rcis-10459466/?isSelfProfile=true",
     bio: (

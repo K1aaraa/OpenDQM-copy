@@ -31,7 +31,7 @@ export function Footer() {
             <h3>Explore</h3>
             <Link href="/about">About OpenDQM</Link>
             <Link href="/events">Events</Link>
-            <span className="footer-unavailable">Resources</span>
+            <Link href="/resources">Resources</Link>
           </div>
 
           <div className="footer-column">

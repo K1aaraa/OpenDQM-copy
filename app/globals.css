@@ -1768,10 +1768,8 @@ h2 strong {
   justify-items: center;
   gap: 30px;
   text-align: left;
-  padding: clamp(24px, 4vw, 48px);
-  border: 1px solid #d9d5eb;
-  border-radius: 20px;
-  background: linear-gradient(120deg, #eeebfa, #edf2fa);
+  padding-top: 48px;
+  border-top: 1px solid rgba(73, 54, 154, 0.2);
 }
 
 .interview-cta-inner > div {
@@ -3452,7 +3450,7 @@ footer .brand img {
   gap: clamp(28px, 5vw, 72px);
 }
 .about-intro {
-  padding-block: 56px 32px;
+  padding-block: 56px 64px;
   background: #f7f6fc;
 }
 .about-intro-summary > p {
@@ -3467,10 +3465,8 @@ footer .brand img {
   color: var(--night);
 }
 .about-intro-copy {
-  padding: clamp(24px, 3vw, 36px);
-  border-left: 3px solid #86a6d7;
-  border-radius: 0 18px 18px 0;
-  background: linear-gradient(120deg, #eeebfa, #f0f3fa);
+  padding: 0;
+  background: transparent;
 }
 .about-intro-copy .section-kicker {
   color: var(--grape);
@@ -3807,8 +3803,7 @@ textarea:focus-visible,
   background: transparent;
 }
 .events-ombre .interview-cta-inner {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(73, 54, 154, 0.18);
+  background: transparent;
 }
 .contact-choices {
   background: linear-gradient(180deg, #f7f6fc, #e5e8f2);
@@ -3829,7 +3824,8 @@ textarea:focus-visible,
   background: rgba(255, 255, 255, 0.65);
   overflow: hidden;
 }
-.contact-choice summary {
+.contact-choice summary,
+.contact-choice-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3842,12 +3838,14 @@ textarea:focus-visible,
 .contact-choice summary::-webkit-details-marker {
   display: none;
 }
-.contact-choice summary strong {
+.contact-choice summary strong,
+.contact-choice-heading strong {
   display: block;
   font-size: 1.3rem;
   margin-bottom: 8px;
 }
-.contact-choice summary > span > span {
+.contact-choice summary > span > span,
+.contact-choice-heading > span > span {
   display: block;
   color: var(--muted);
 }
@@ -3885,8 +3883,88 @@ textarea:focus-visible,
 }
 /* Compact brand lockups, connected participation choices, and team card faces. */
 .hero {
-  padding-top: 138px;
-  padding-bottom: 64px;
+  min-height: 0;
+  padding-top: 144px;
+  padding-bottom: 80px;
+}
+.hero-content {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px clamp(32px, 5vw, 72px);
+  text-align: left;
+}
+.hero .hero-logo {
+  margin: 0;
+  width: min(220px, 100%);
+}
+.hero .hero-title {
+  max-width: 22ch;
+  margin: 0 0 24px;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 500;
+}
+.hero .hero-copy {
+  margin: 0;
+}
+.hero-actions {
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+.brand-icon {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.contact-flow {
+  background: linear-gradient(180deg, #f7f6fc, #e5e8f2);
+}
+.contact-flow > section {
+  background: transparent;
+}
+.contact-flow .interview-section {
+  background: transparent;
+}
+.contact-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 6vw, 80px);
+  margin-top: 40px;
+}
+.contact-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.contact-path-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e7e2f6;
+  color: var(--grape);
+}
+.contact-path h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.3vw, 1.8rem);
+  color: var(--night);
+}
+.contact-path p {
+  margin: 0;
+  color: var(--muted);
+}
+.contact-path .contact-email {
+  color: var(--grape);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contact-path .button {
+  margin-top: auto;
 }
 .connect-section {
   padding-block: 48px 24px;
@@ -4096,6 +4174,13 @@ textarea:focus-visible,
   }
 }
 @media (max-width: 767px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .contact-paths {
+    grid-template-columns: 1fr;
+  }
   .site-header .brand img {
     width: 76px;
   }
@@ -4118,7 +4203,7 @@ textarea:focus-visible,
     padding-bottom: 60px;
   }
   .hero .hero-logo {
-    width: min(210px, 100%);
+    width: min(185px, 100%);
   }
 }
 @media (max-width: 600px) {
