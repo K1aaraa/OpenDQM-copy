@@ -6,7 +6,7 @@ const INTERVIEW_COLUMNS = [
   "professional_background",
   "linkedin",
   "email",
-  "preferred_interview_slots",
+  "preferred_interview_times",
   "timezone",
   "interest_reason",
   "source"
@@ -33,6 +33,7 @@ function doPost(event) {
       !row[2].trim() ||
       !row[3].trim() ||
       !row[8].trim() ||
+      !row[6].trim() ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(row[5]) ||
       row[9] !== "opendqm-interview-form"
     )

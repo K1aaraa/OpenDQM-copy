@@ -16,7 +16,7 @@ export function InstitutionalSupport() {
             />
           </div>
           <div className="institutional-support-copy">
-            <p className="section-kicker"></p>
+            <p className="section-kicker">Supported by the National Science Foundation</p>
             <h2 id="institutional-support-title">NSF POSE Phase I Grant</h2>
             <p>
               OpenDQM research is being conducted within the framework of the National Science

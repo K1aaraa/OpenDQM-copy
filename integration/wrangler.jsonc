@@ -3,6 +3,6 @@
   "main": "interview-worker.ts",
   "compatibility_date": "2026-10-09",
   "vars": {
-    "ALLOWED_ORIGIN": "https://k1aaraa.github.io"
+    "ALLOWED_ORIGINS": "https://k1aaraa.github.io,http://localhost:3000"
   }
 }

@@ -22,9 +22,8 @@ const steps = [
 export function WhySection() {
   return (
     <section className="why-section" id="why">
-      <p className="section-kicker"></p>
       <div className="container vertical-story-intro">
-        <GradientHeading lead="" emphasis="Our Mission: " />
+        <GradientHeading lead="Our" emphasis="Mission" />
         <div className="why-copy">
           <p>
             OpenDQM is researching the establishment of an open, shared, trusted, and interoperable

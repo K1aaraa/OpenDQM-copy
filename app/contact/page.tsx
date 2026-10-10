@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { InterviewForm } from "@/components/InterviewForm";
+import { ContactChoices } from "@/components/ContactChoices";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,21 +13,11 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Contact"
+        eyebrow="Get involved"
         title="Help shape distributed quality management"
-        description="OpenDQM is developing shared infrastructure and community practices for an open, trusted, interoperable quality ecosystem."
+        description="Whether you'd like to ask a question or participate in the research, we'd like to hear from you."
       />
-      <section className="section">
-        <div className="container contact-panel">
-          <article className="info-card">
-            <h2>Contact the OpenDQM team</h2>
-            <a className="contact-email" href="mailto:info@opendqm.org">
-              info@opendqm.org
-            </a>
-          </article>
-        </div>
-      </section>
-      <InterviewForm />
+      <ContactChoices />
     </>
   );
 }

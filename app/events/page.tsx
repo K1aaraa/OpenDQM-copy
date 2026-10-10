@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EventCollections } from "@/components/EventCollections";
 import { PageHeader } from "@/components/PageHeader";
-import { SurveyCta } from "@/components/SurveyCta";
+import { InterviewCta } from "@/components/InterviewCta";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -17,12 +17,14 @@ export default function EventsPage() {
         title="Support OpenDQM Research"
         description="OpenDQM workshops connect experts in quality assurance, manufacturing, hardware, testing, standards, and distributed production."
       />
-      <section className="section">
-        <div className="container">
-          <EventCollections />
-        </div>
-      </section>
-      <SurveyCta compact />
+      <div className="events-ombre">
+        <section className="section">
+          <div className="container">
+            <EventCollections />
+          </div>
+        </section>
+        <InterviewCta compact />
+      </div>
     </>
   );
 }
