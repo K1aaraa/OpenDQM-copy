@@ -6,6 +6,7 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { assetPath } from "@/lib/assets";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://opendqm.org";
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   description:
     "OpenDQM is building an open, shared, trusted ecosystem for distributed quality management.",
   applicationName: "OpenDQM",
+  icons: { icon: [{ url: assetPath("/favicon.svg"), type: "image/svg+xml" }] },
   keywords: [
     "OpenDQM",
     "distributed quality management",

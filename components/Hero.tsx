@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { assetPath } from "@/lib/assets";
+import { BrandIcon } from "@/components/BrandIcon";
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -45,17 +48,28 @@ export function Hero() {
       </div>
       <div className="container hero-grid">
         <div className="hero-content">
-          <h1>Distributed Quality Management</h1>
-          <p className="hero-copy">
-            Quality management has not yet adapted to an emerging democratized, distributed reality.
-            OpenDQM is researching a shared foundation for this new context.
-          </p>
+          <div className="hero-logo">
+            <Image
+              src={assetPath("/images/Light Logo.png")}
+              alt="OpenDQM"
+              width={1400}
+              height={670}
+              priority
+            />
+          </div>
+          <div className="hero-message">
+            <h1 className="hero-title">Distributed Quality Management</h1>
+            <p className="hero-copy">
+              OpenDQM is researching a new ecosystem that supports democratized quality control,
+              distributed quality assurance, and trusted verification across diverse stakeholders.
+            </p>
+          </div>
           <div className="hero-actions">
             <Link className="button hero-button-primary" href="/contact#schedule-interview">
-              Schedule an Interview <span aria-hidden="true">&#8594;</span>
+              Schedule an Interview <BrandIcon kind="arrow" />
             </Link>
             <Link className="button hero-button-secondary" href="/about">
-              About us <span aria-hidden="true">&#8594;</span>
+              About us <BrandIcon kind="arrow" />
             </Link>
           </div>
         </div>

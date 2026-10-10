@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-// import { surveyUrl } from "@/data/resources";
 
 const currentYear = new Date().getFullYear();
 
@@ -9,29 +9,15 @@ export function Footer() {
   return (
     <footer id="contact">
       <div className="container">
-        {/* <div className="footer-cta">
-          <h2>
-            Help shape the future of <span>distributed quality management.</span>
-          </h2>
-          <div className="footer-actions">
-            <a className="button button-light" href={surveyUrl}>
-              Take the survey
-            </a>
-            <Link className="button button-outline-light" href="/contact">
-              Contact us
-            </Link>
-          </div>
-        </div> */}
-
         <div className="footer-directory">
           <div className="footer-intro">
-            <Logo />
+            <Logo variant="light" />
 
             <p>Open, shared infrastructure for trusted distributed quality management.</p>
 
             <div className="footer-funding">
               <Image
-                src="/images/nsf-logo.png"
+                src={assetPath("/images/nsf-logo.png")}
                 alt="National Science Foundation logo"
                 width={70}
                 height={70}
@@ -44,16 +30,9 @@ export function Footer() {
           <div className="footer-column">
             <h3>Explore</h3>
             <Link href="/about">About OpenDQM</Link>
-            <span className="footer-unavailable">Updates</span>
             <Link href="/events">Events</Link>
-            <span className="footer-unavailable">Resources</span>
+            <Link href="/resources">Resources</Link>
           </div>
-
-          {/* <div className="footer-column">
-            <h3>Resources</h3>
-            <a href={surveyUrl}>Survey</a>
-            <span className="footer-unavailable">Community materials</span>
-          </div> */}
 
           <div className="footer-column">
             <h3>Connect</h3>

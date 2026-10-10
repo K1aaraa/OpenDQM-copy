@@ -20,7 +20,6 @@ export function EventsSection() {
       <div className="container">
         <Reveal className="events-heading">
           <div>
-            <p className="eyebrow">Events</p>
             <GradientHeading lead="Join an upcoming" emphasis="workshop." />
             <p className="section-intro">
               OpenDQM workshops connect experts in quality assurance, manufacturing, hardware,

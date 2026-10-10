@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactChoices } from "@/components/ContactChoices";
-import "@/app/interview.css";
 
 export const metadata: Metadata = {
   title: "Contact",

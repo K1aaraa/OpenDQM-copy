@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import { useState } from "react";
 import { projects } from "@/data/projects";
 
@@ -21,7 +22,7 @@ export function AboutEcosystem() {
           >
             <span className="about-project-number">0{index + 1}</span>
             <span className="about-project-card-logo">
-              <Image src={project.image} alt={project.alt} width={170} height={84} />
+              <Image src={assetPath(project.image)} alt={project.alt} width={170} height={84} />
             </span>
             <span className="about-project-card-name">{project.title}</span>
             <span className="about-project-details">

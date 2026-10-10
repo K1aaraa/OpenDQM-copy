@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 import { Reveal } from "@/components/Reveal";
 
 export function InstitutionalSupport() {
@@ -7,11 +8,16 @@ export function InstitutionalSupport() {
       <div className="container">
         <Reveal className="institutional-support-panel">
           <div className="nsf-wordmark">
-            <Image src="public/images/nsf-logo.png" alt="" width={260} height={260} />
+            <Image
+              src={assetPath("/images/nsf-logo.png")}
+              alt="National Science Foundation logo"
+              width={260}
+              height={260}
+            />
           </div>
           <div className="institutional-support-copy">
-            <p className="section-kicker"></p>
-            <h2 id="institutional-support-title">NSF POSE initiative</h2>
+            <p className="section-kicker">Supported by the National Science Foundation</p>
+            <h2 id="institutional-support-title">NSF POSE Phase I Grant</h2>
             <p>
               OpenDQM research is being conducted within the framework of the National Science
               Foundation&apos;s Pathways to Enable Open-Source Ecosystems (POSE) program, which

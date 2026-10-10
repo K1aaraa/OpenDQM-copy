@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import { AboutEcosystem } from "@/components/AboutEcosystem";
 import { InstitutionalSupport } from "@/components/InstitutionalSupport";
+import { TeamSection } from "@/components/TeamSection";
 import { PageHeader } from "@/components/PageHeader";
 // import { PerspectivesSection } from "@/components/PerspectivesSection";
 // import { PrinciplesSection } from "@/components/PrinciplesSection";
@@ -18,31 +19,31 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="About"
-        title="We are researching the distributed quality management ecosystem."
+        title="Researching a new distributed quality management ecosystem"
         description=""
       />
-      <section className="section about-intro">
-        <div className="container about-intro-grid">
-          <Reveal>
-            <GradientHeading lead="What is OpenDQM?" emphasis=" " />
-          </Reveal>
-          <Reveal className="about-intro-copy">
-            <p>
-              A community-driven effort that connects people exploring how quality can work across
-              organizations, tools, and locations/
-            </p>
-            <p>
-              How can information move without requiring every participant to use the same system?
-              How can open participation be supported while preserving accountability, learning, and
-              trust?
-            </p>
-          </Reveal>
-        </div>
-      </section>
-      {/* <PerspectivesSection /> */}
-      {/* <PrinciplesSection /> */}
-      {/* <section className="section about-ecosystem" id="affiliated-projects">
+      <div className="about-ombre">
+        <section className="section about-intro">
+          <div className="container about-intro-grid">
+            <Reveal className="about-intro-summary">
+              <GradientHeading lead="What is OpenDQM?" emphasis=" " />
+            </Reveal>
+            <Reveal className="about-intro-copy">
+              <p>
+                A community-driven effort that connects people exploring how quality can work across
+                organizations, tools, and locations.
+              </p>
+              <p>
+                How can information move without requiring every participant to use the same system?
+                How can open participation be supported while preserving accountability, learning,
+                and trust?
+              </p>
+            </Reveal>
+          </div>
+        </section>
+        {/* <PerspectivesSection /> */}
+        {/* <PrinciplesSection /> */}
+        {/* <section className="section about-ecosystem" id="affiliated-projects">
         <div className="container">
           <Reveal className="section-heading">
             <GradientHeading lead="How the ecosystem" emphasis="connects." />
@@ -54,8 +55,10 @@ export default function AboutPage() {
           <AboutEcosystem />
         </div>
       </section> */}
-      {/* <AboutEcosystem /> */}
-      <InstitutionalSupport />
+        {/* <AboutEcosystem /> */}
+        <InstitutionalSupport />
+        <TeamSection />
+      </div>
     </>
   );
 }

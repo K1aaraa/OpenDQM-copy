@@ -59,19 +59,16 @@ export function Header() {
                 ) : (
                   <Link className={pathname === item.href ? "active" : ""} href={item.href}>
                     {item.label}
-                    {item.href === "/resources" && <span aria-hidden="true">&#8964;</span>}
                   </Link>
                 )}
                 {item.comingSoon && <span role="tooltip">Coming soon</span>}
                 {item.href === "/resources" && (
                   <div className="nav-popup">
                     <a href={resources.participate.href}>
-                      <span>Participate</span>
                       <strong>OpenDQM Survey</strong>
                       <small>Help shape the ecosystem</small>
                     </a>
                     <div className="nav-popup-soon">
-                      <span>Resources</span>
                       <strong>Community materials</strong>
                       <small>Coming soon</small>
                     </div>
@@ -106,6 +103,7 @@ export function Header() {
         className={`mobile-menu ${isOpen ? "open" : ""}`}
         id="mobile-menu"
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="mobile-menu-head">
           <span>Explore OpenDQM</span>
@@ -114,11 +112,10 @@ export function Header() {
           </button>
         </div>
         <div className="mobile-menu-links">
-          {navigation.map((item, index) => (
+          {navigation.map((item) => (
             <div className="mobile-nav-group" key={item.href}>
               {item.comingSoon ? (
                 <div className="mobile-nav-disabled" aria-disabled="true">
-                  <span>0{index + 1}</span>
                   <div>
                     {item.label}
                     <small>Coming soon</small>
@@ -126,7 +123,6 @@ export function Header() {
                 </div>
               ) : (
                 <Link className={pathname === item.href ? "active" : ""} href={item.href}>
-                  <span>0{index + 1}</span>
                   {item.label}
                 </Link>
               )}
