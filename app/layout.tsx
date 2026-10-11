@@ -20,7 +20,15 @@ export const metadata: Metadata = {
   description:
     "OpenDQM is building an open, shared, trusted ecosystem for distributed quality management.",
   applicationName: "OpenDQM",
-  icons: { icon: [{ url: assetPath("/favicon.svg"), type: "image/svg+xml" }] },
+  icons: {
+    icon: [
+      { url: assetPath("/images/favicon/favicon.ico"), sizes: "any" },
+      { url: assetPath("/images/favicon/favicon-96x96.png"), type: "image/png", sizes: "96x96" },
+      { url: assetPath("/images/favicon/favicon.svg"), type: "image/svg+xml", sizes: "any" }
+    ],
+    apple: [{ url: assetPath("/images/favicon/apple-touch-icon.png"), sizes: "180x180" }]
+  },
+  manifest: assetPath("/images/favicon/site.webmanifest"),
   keywords: [
     "OpenDQM",
     "distributed quality management",

@@ -3932,13 +3932,13 @@ textarea:focus-visible,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(32px, 6vw, 80px);
-  margin-top: 40px;
+  margin-top: 32px;
 }
 .contact-path {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
 }
 .contact-path-icon {
   display: grid;
@@ -3959,12 +3959,13 @@ textarea:focus-visible,
   color: var(--muted);
 }
 .contact-path .contact-email {
+  margin: 0;
   color: var(--grape);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 .contact-path .button {
-  margin-top: auto;
+  margin-top: 0;
 }
 .connect-section {
   padding-block: 48px 24px;

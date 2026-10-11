@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Get involved"
-        title="Help shape distributed quality management"
-        description="Whether you'd like to ask a question or participate in the research, we'd like to hear from you."
-      />
+      <PageHeader title="Help shape distributed quality management" description="" />
       <ContactChoices />
     </>
   );

@@ -29,14 +29,12 @@ export function ContactChoices() {
       <section className="section contact-choices" aria-labelledby="connect-title">
         <div className="container">
           <h2 id="connect-title">Connect with the team</h2>
-          <p className="connect-intro">Choose how you’d like to get involved.</p>
           <div className="contact-paths">
             <article className="contact-path">
               <span className="contact-path-icon">
                 <BrandIcon kind="mail" />
               </span>
               <h3>Email the team</h3>
-              <p>Ask a question or start a conversation.</p>
               <a className="contact-email" href="mailto:info@opendqm.org">
                 info@opendqm.org
               </a>
@@ -49,7 +47,6 @@ export function ContactChoices() {
                 <BrandIcon kind="calendar" />
               </span>
               <h3>Schedule an Interview</h3>
-              <p>Share your experience and help inform the research.</p>
               <button
                 className="button button-primary"
                 type="button"

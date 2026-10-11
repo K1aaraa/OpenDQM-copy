@@ -91,10 +91,7 @@ export function InterviewForm() {
     >
       <div className="container interview-panel">
         <h2 id="interview-title">Schedule an Interview</h2>
-        <p>
-          Share your experience and help shape OpenDQM research. Tell us when you’re available; the
-          team will contact you to arrange an interview.
-        </p>
+        <p>Share your experience and help shape OpenDQM research.</p>
         <div ref={feedback} tabIndex={-1} role={errors.length ? "alert" : "status"}>
           {errors.length > 0 && (
             <ul className="form-errors">
@@ -151,13 +148,8 @@ export function InterviewForm() {
                   maxLength={2000}
                   rows={5}
                   placeholder="I'm usually available Oct. 15-18 after 2 PM, Friday mornings, or Tuesday Oct. 20 between 10 AM and 1 PM."
-                  aria-describedby="availability-help"
                 />
               </label>
-              <p id="availability-help" className="form-help">
-                Tell us what works for you in your own words. The team will follow up to confirm a
-                time.
-              </p>
               <label className="timezone-field">
                 Your time zone
                 <input
