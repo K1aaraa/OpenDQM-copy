@@ -16,20 +16,6 @@ export const resources = {
       description: "Read the proposal that frames the current OpenDQM project and its goals.",
       href: "/documents/2026-POSE-Proposal.pdf",
       action: "View proposal"
-    },
-    {
-      eyebrow: "Working source",
-      title: "State of the Art",
-      description: "LaTeX source for the state-of-the-art working document.",
-      href: "/documents/State_of_the_art.tex",
-      action: "View source"
-    },
-    {
-      eyebrow: "Working source",
-      title: "Scoping Report",
-      description: "LaTeX source for the OpenDQM scoping report.",
-      href: "/documents/Scoping_Report.tex",
-      action: "View source"
     }
   ]
 } as const;

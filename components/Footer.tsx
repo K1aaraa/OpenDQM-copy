@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { assetPath } from "@/lib/assets";
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { Wordmark } from "@/components/Wordmark";
 
 const currentYear = new Date().getFullYear();
 
@@ -11,13 +11,13 @@ export function Footer() {
       <div className="container">
         <div className="footer-directory">
           <div className="footer-intro">
-            <Logo variant="light" />
+            <Wordmark variant="light" />
 
             <p>Open, shared infrastructure for trusted distributed quality management.</p>
 
             <div className="footer-funding">
               <Image
-                src={assetPath("/images/nsf-logo.png")}
+                src={assetPath("/images/nsf-logo.webp")}
                 alt="National Science Foundation logo"
                 width={70}
                 height={70}

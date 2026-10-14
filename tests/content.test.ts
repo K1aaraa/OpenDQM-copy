@@ -7,14 +7,36 @@ import { projects } from "@/data/projects";
 import { resources } from "@/data/resources";
 import { formatDateRange } from "@/lib/formatDate";
 import { isPastEvent } from "@/lib/events";
-import { Hero } from "@/components/Hero";
-import { InterviewCta } from "@/components/InterviewCta";
+import { existsSync } from "node:fs";
+import { webinars } from "@/data/webinars";
 
 describe("site content", () => {
-  it.each([Hero, InterviewCta])("routes interview CTAs to the Contact form", (Component) => {
-    const markup = renderToStaticMarkup(createElement(Component));
-    expect(markup).toContain('href="/contact#schedule-interview"');
-    expect(markup).not.toContain("docs.google.com/forms");
+  it("references real project images and documents with matching filename case", () => {
+    for (const asset of [
+      ...projects.map((project) => project.image),
+      ...resources.documents.map((document) => document.href)
+    ]) {
+      expect(
+        existsSync(new URL(`../public${decodeURIComponent(asset)}`, import.meta.url)),
+        asset
+      ).toBe(true);
+    }
+  });
+
+  it("keeps generated webinar routes unique and presenter links navigable", () => {
+    const slugs = webinars.map((webinar) => webinar.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+    for (const webinar of webinars) {
+      expect(webinar.slug).toMatch(/^[a-z0-9-]+$/);
+      expect(new Set(webinar.presenters.map((presenter) => presenter.name)).size).toBe(
+        webinar.presenters.length
+      );
+      for (const presenter of webinar.presenters) {
+        for (const link of presenter.links) {
+          expect(["http:", "https:"]).toContain(new URL(link.href).protocol);
+        }
+      }
+    }
   });
   it("keeps affiliated projects data complete", () => {
     expect(projects).toHaveLength(6);

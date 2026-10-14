@@ -3,3 +3,7 @@ out
 node_modules
 coverage
 public/documents/*.pdf
+.npm-cache
+.qa
+playwright-report
+test-results

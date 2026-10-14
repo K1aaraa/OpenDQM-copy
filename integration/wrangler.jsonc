@@ -1,0 +1,9 @@
+{
+  "name": "opendqm-interview",
+  "main": "interview-worker.ts",
+  "compatibility_date": "2026-10-09",
+  "vars": {
+    "APPS_SCRIPT_URL": "https://script.google.com/macros/s/AKfycbxagtMkM7DHh7eQkxz1SfsJo9A28NJ0OQtSdVSdl3fyluuPaMGmzoOZJnSQYjHxj5kdBw/exec",
+    "ALLOWED_ORIGINS": "https://k1aaraa.github.io,http://localhost:3000"
+  }
+}

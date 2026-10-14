@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { EventCard } from "@/components/EventCard";
 import { events } from "@/data/events";
 import { isPastEvent } from "@/lib/events";
+import Link from "next/link";
+import { webinars } from "@/data/webinars";
 
 export function EventCollections() {
   const [today, setToday] = useState<Date | null>(null);
@@ -34,14 +36,26 @@ export function EventCollections() {
           <h2 id="past-events">Past events</h2>
         </div>
         <div className="event-page-grid">
+          {webinars.map((webinar) => (
+            <article className="info-card event-card webinar-card" key={webinar.slug}>
+              <time className="event-date" dateTime={webinar.dateTime}>
+                {webinar.date}
+              </time>
+              <h3>{webinar.title}</h3>
+              <p className="event-location">Online webinar</p>
+              <p>
+                A community gathering to share ideas and tools for distributed quality management.
+              </p>
+              <Link className="webinar-link" href={`/events/${webinar.slug}`}>
+                View webinar details →
+              </Link>
+            </article>
+          ))}
           {past.map((event) => (
             <div id={event.id} key={event.id}>
               <EventCard event={event} past />
             </div>
           ))}
-          {past.length === 0 && (
-            <p className="empty-state">Past workshop details will appear here.</p>
-          )}
         </div>
       </section>
     </div>

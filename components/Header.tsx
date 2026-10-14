@@ -3,16 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Logo } from "@/components/Logo";
+import { Wordmark } from "@/components/Wordmark";
 import { navigation } from "@/data/navigation";
 import { resources } from "@/data/resources";
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/$/, "");
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const previousScroll = useRef(0);
+  const menuRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => setIsOpen(false), [pathname]);
 
@@ -28,14 +31,50 @@ export function Header() {
   }, [isOpen]);
 
   useEffect(() => {
-    document.body.classList.toggle("menu-open", isOpen);
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
+    if (!isOpen) return;
+    document.body.classList.add("menu-open");
+    const menu = menuRef.current;
+    const toggle = toggleRef.current;
+    const focusable = () =>
+      Array.from(menu?.querySelectorAll<HTMLElement>("a[href], button:not([disabled])") ?? []);
+    const frame = requestAnimationFrame(() => focusable()[0]?.focus());
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+      }
+      if (event.key === "Tab") {
+        const items = focusable();
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
     };
-    document.addEventListener("keydown", closeOnEscape);
+    const background = document.querySelectorAll<HTMLElement>("main, footer");
+    background.forEach((element) => {
+      element.inert = true;
+    });
+    const desktop = matchMedia("(min-width: 761px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setIsOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    document.addEventListener("keydown", onKeyDown);
     return () => {
+      cancelAnimationFrame(frame);
       document.body.classList.remove("menu-open");
-      document.removeEventListener("keydown", closeOnEscape);
+      background.forEach((element) => {
+        element.inert = false;
+      });
+      desktop.removeEventListener("change", closeOnDesktop);
+      document.removeEventListener("keydown", onKeyDown);
+      toggle?.focus({ preventScroll: true });
     };
   }, [isOpen]);
 
@@ -44,7 +83,7 @@ export function Header() {
       className={`site-header ${isHidden ? "header-hidden" : ""} ${isScrolled ? "header-scrolled" : ""}`}
     >
       <nav className="nav" aria-label="Primary navigation">
-        <Logo />
+        <Wordmark />
         <div className="desktop-navigation">
           <ul className="nav-links">
             {navigation.map((item) => (
@@ -57,7 +96,11 @@ export function Header() {
                     {item.label}
                   </button>
                 ) : (
-                  <Link className={pathname === item.href ? "active" : ""} href={item.href}>
+                  <Link
+                    className={isActive(item.href) ? "active" : ""}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    href={item.href}
+                  >
                     {item.label}
                   </Link>
                 )}
@@ -79,6 +122,7 @@ export function Header() {
           </ul>
         </div>
         <button
+          ref={toggleRef}
           className="menu-toggle"
           type="button"
           aria-expanded={isOpen}
@@ -100,6 +144,10 @@ export function Header() {
         onClick={() => setIsOpen(false)}
       />
       <aside
+        ref={menuRef}
+        role={isOpen ? "dialog" : undefined}
+        aria-modal={isOpen ? true : undefined}
+        aria-label="Site navigation"
         className={`mobile-menu ${isOpen ? "open" : ""}`}
         id="mobile-menu"
         aria-hidden={!isOpen}
@@ -122,7 +170,11 @@ export function Header() {
                   </div>
                 </div>
               ) : (
-                <Link className={pathname === item.href ? "active" : ""} href={item.href}>
+                <Link
+                  className={isActive(item.href) ? "active" : ""}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  href={item.href}
+                >
                   {item.label}
                 </Link>
               )}

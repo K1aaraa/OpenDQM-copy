@@ -10,7 +10,7 @@
 
 Build one reusable interest form for the About page, Events page, and final site CTA. The frontend should submit to an external serverless endpoint so the website can remain on GitHub Pages.
 
-The typed frontend form is prepared in `components/InterestForm.tsx`. It must not be rendered until a reviewed endpoint, privacy statement, success/error handling, and abuse controls are configured.
+This signup feature is not implemented. Add it only when an endpoint, privacy statement, success/error handling, and abuse controls are configured. The existing research interview form is separate; see `integration/README.md`.
 
 ```text
 GitHub Pages

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-// import { AboutEcosystem } from "@/components/AboutEcosystem";
+import Image from "next/image";
+import { assetPath } from "@/lib/assets";
+import { BrandIcon } from "@/components/BrandIcon";
 import { InstitutionalSupport } from "@/components/InstitutionalSupport";
 import { TeamSection } from "@/components/TeamSection";
 import { PageHeader } from "@/components/PageHeader";
-// import { PerspectivesSection } from "@/components/PerspectivesSection";
-// import { PrinciplesSection } from "@/components/PrinciplesSection";
 import { Reveal } from "@/components/Reveal";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -41,23 +41,45 @@ export default function AboutPage() {
             </Reveal>
           </div>
         </section>
-        {/* <PerspectivesSection /> */}
-        {/* <PrinciplesSection /> */}
-        {/* <section className="section about-ecosystem" id="affiliated-projects">
-        <div className="container">
-          <Reveal className="section-heading">
-            <GradientHeading lead="How the ecosystem" emphasis="connects." />
-            <p>
-              Affiliated projects bring complementary experience to the wider challenge of
-              distributed quality management.
-            </p>
-          </Reveal>
-          <AboutEcosystem />
-        </div>
-      </section> */}
-        {/* <AboutEcosystem /> */}
         <InstitutionalSupport />
         <TeamSection />
+        <section className="section project-summary" aria-labelledby="project-summary-title">
+          <div className="container project-summary-grid">
+            <div>
+              <h2 id="project-summary-title">Read the Project Summary</h2>
+              <p>
+                Explore the vision and goals behind OpenDQM and our research into distributed
+                quality management.
+              </p>
+              <a
+                className="button button-primary"
+                href={assetPath("/documents/OpenDQM%20summary.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Project Summary PDF (opens in a new tab)"
+              >
+                View PDF <BrandIcon kind="arrow" />
+              </a>
+            </div>
+            <a
+              className="summary-preview"
+              href={assetPath("/documents/OpenDQM%20summary.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the OpenDQM Project Summary PDF in a new tab"
+            >
+              <Image
+                src={assetPath("/documents/opendqm-summary-preview.png")}
+                alt="Preview of the OpenDQM Project Summary: overview, intellectual merits, and broader impacts"
+                width={857}
+                height={1109}
+              />
+              <span>
+                Open PDF <BrandIcon kind="arrow" />
+              </span>
+            </a>
+          </div>
+        </section>
       </div>
     </>
   );

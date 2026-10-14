@@ -9,7 +9,7 @@ export function InstitutionalSupport() {
         <Reveal className="institutional-support-panel">
           <div className="nsf-wordmark">
             <Image
-              src={assetPath("/images/nsf-logo.png")}
+              src={assetPath("/images/nsf-logo.webp")}
               alt="National Science Foundation logo"
               width={260}
               height={260}

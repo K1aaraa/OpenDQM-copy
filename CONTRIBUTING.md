@@ -13,11 +13,11 @@ Thank you for helping improve OpenDQM. This project uses a pull request workflow
 ## Local Checks
 
 ```bash
-npm run lint
-npm run typecheck
-npm run test
-npm run format:check
+npm run check
+npm audit --omit=dev --audit-level=moderate
 npm run build
+npx playwright install chromium
+npm run test:browser
 ```
 
 ## Commit Messages
@@ -48,3 +48,5 @@ Pull requests should include:
 - Any follow-up work or known limitations
 
 CI must pass before merge. Deployment to GitHub Pages happens only after changes are merged to `main`.
+
+Use Node 22 LTS (22.12+). See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for the route/content map and [docs/VERIFICATION.md](docs/VERIFICATION.md) for the GitHub Pages prefix check and browser test scope. Do not commit generated exports, screenshots, or test reports. Test real form delivery only against an explicitly selected test destination.

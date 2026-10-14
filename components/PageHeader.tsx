@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/Reveal";
+
 type PageHeaderProps = {
   eyebrow?: string;
   title: string;
@@ -17,4 +19,3 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
     </section>
   );
 }
-import { Reveal } from "@/components/Reveal";

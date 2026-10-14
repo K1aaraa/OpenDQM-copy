@@ -3,7 +3,7 @@ export const team = [
     id: "robert-read",
     name: "Robert L. Read, PhD",
     role: "Principal Investigator",
-    image: "/images/team/robert-read.png",
+    image: "/images/team/robert-read.webp",
     linkedin: "https://www.linkedin.com/in/robert-read-878987/",
     bio: (
       <p>
@@ -25,7 +25,7 @@ export const team = [
     id: "victoria-jaqua",
     name: "Victoria F. Jaqua",
     role: "Co-Principal Investigator",
-    image: "/images/team/victoria-jaqua.jpg",
+    image: "/images/team/victoria-jaqua.webp",
     linkedin:
       "https://www.linkedin.com/in/victoria-jaqua-rt-r-ct-rcis-10459466/?isSelfProfile=true",
     bio: (
@@ -54,7 +54,7 @@ export const team = [
     id: "avinash-baskaran",
     name: "Avinash Baskaran, PhD",
     role: "Program Manager",
-    image: "/images/team/avinash-baskaran.png",
+    image: "/images/team/avinash-baskaran.webp",
     linkedin: "https://www.linkedin.com/in/avinashbaskaran/",
     bio: (
       <p>
@@ -78,7 +78,7 @@ export const team = [
     id: "andrew-lamb",
     name: "Andrew Lamb",
     role: "Chair and co-founder, Internet of Production",
-    image: "/images/team/andrew-lamb.png",
+    image: "/images/team/andrew-lamb.webp",
     linkedin: "https://www.linkedin.com/in/andrew-lamb/",
     bio: (
       <p>

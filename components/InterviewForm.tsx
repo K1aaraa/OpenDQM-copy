@@ -147,7 +147,7 @@ export function InterviewForm() {
                   required
                   maxLength={2000}
                   rows={5}
-                  placeholder="I'm usually available Oct. 15-18 after 2 PM, Friday mornings, or Tuesday Oct. 20 between 10 AM and 1 PM."
+                  placeholder="For example, weekday mornings, next Thursday after 2 PM, or a specific date and time range."
                 />
               </label>
               <label className="timezone-field">

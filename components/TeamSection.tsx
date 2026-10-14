@@ -15,8 +15,22 @@ function TeamCard({ person }: { person: (typeof team)[number] }) {
     setFlipped(value);
   };
   useEffect(() => {
-    if (interacted.current)
-      (flipped ? backButton : frontButton).current?.focus({ preventScroll: true });
+    if (!interacted.current) return;
+    // The browser can apply visibility/inert changes after React commits the new face.
+    // Focus only when that face can actually receive it, including reduced-motion mode.
+    let frame = 0;
+    let attempts = 0;
+    const focusActiveFace = () => {
+      const target = (flipped ? backButton : frontButton).current;
+      if (!target) return;
+      if (getComputedStyle(target).visibility === "visible" && !target.closest("[inert]")) {
+        target.focus({ preventScroll: true });
+      } else if (++attempts < 60) {
+        frame = requestAnimationFrame(focusActiveFace);
+      }
+    };
+    frame = requestAnimationFrame(focusActiveFace);
+    return () => cancelAnimationFrame(frame);
   }, [flipped]);
   const name = (
     <h3>

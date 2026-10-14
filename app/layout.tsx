@@ -6,8 +6,9 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { assetPath } from "@/lib/assets";
 import "./globals.css";
+import "@/styles/project-summary.css";
+import "@/styles/webinars.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://opendqm.org";
 
@@ -20,15 +21,7 @@ export const metadata: Metadata = {
   description:
     "OpenDQM is building an open, shared, trusted ecosystem for distributed quality management.",
   applicationName: "OpenDQM",
-  icons: {
-    icon: [
-      { url: assetPath("/images/favicon/favicon.ico"), sizes: "any" },
-      { url: assetPath("/images/favicon/favicon-96x96.png"), type: "image/png", sizes: "96x96" },
-      { url: assetPath("/images/favicon/favicon.svg"), type: "image/svg+xml", sizes: "any" }
-    ],
-    apple: [{ url: assetPath("/images/favicon/apple-touch-icon.png"), sizes: "180x180" }]
-  },
-  manifest: assetPath("/images/favicon/site.webmanifest"),
+  icons: { icon: "data:," },
   keywords: [
     "OpenDQM",
     "distributed quality management",
@@ -43,14 +36,12 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "OpenDQM",
     title: "OpenDQM | Open Distributed Quality Management",
-    description: "An open, shared, trusted ecosystem for distributed quality management.",
-    images: [{ url: "/images/opengraph.svg", width: 1200, height: 630, alt: "OpenDQM" }]
+    description: "An open, shared, trusted ecosystem for distributed quality management."
   },
   twitter: {
     card: "summary_large_image",
     title: "OpenDQM",
-    description: "An open, shared, trusted ecosystem for distributed quality management.",
-    images: ["/images/opengraph.svg"]
+    description: "An open, shared, trusted ecosystem for distributed quality management."
   },
   alternates: {
     canonical: "/"
